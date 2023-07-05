@@ -15,6 +15,14 @@ git config --global core.excludesfile ~/dotfiles/.gitignore_global
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
+## SSH
+- insert security key
+```sh
+ssh-keygen -t ed25519-sk -C "email@email.net"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519_sk
+```
+
 
 ## Zsh
 ```sh
@@ -69,12 +77,6 @@ Icon=/opt/firefox-nightly/browser/chrome/icons/default/default128.png
 Categories=Network;WebBrowser;
 EOF
 sudo update-desktop-database
-```
-
-## SSH
-- insert security key
-```sh
-ssh-keygen -t ed25519-sk -C "email@email.net"
 ```
 
 ### Add dot files and vim plugins
