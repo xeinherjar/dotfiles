@@ -25,13 +25,15 @@ return require('packer').startup(function(use)
 
   -- LSP Setup
   use({'scalameta/nvim-metals', requires = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' }})
+  use 'neovim/nvim-lspconfig'
   -- Autocomplete for use with LSPs
   use({
     "hrsh7th/nvim-cmp",
     requires = {
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "hrsh7th/cmp-vsnip" },
-      { "hrsh7th/vim-vsnip" },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-vsnip' },
+      { 'hrsh7th/vim-vsnip' },
     },
   })
 end)

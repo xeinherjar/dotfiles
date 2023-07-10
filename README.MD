@@ -2,10 +2,10 @@
 #
 ## Base
 ```sh
-sudo apt install build-essential git curl alacritty 
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
-sudo apt-get install neovim
+sudo apt-get install build-essential git curl alacritty ripgrep
+sudo apt-get install neovim tmux
 ```
 
 ## Tools
@@ -27,19 +27,32 @@ ssh-add ~/.ssh/id_ed25519_sk
 ## Zsh
 ```sh
 chsh -s /usr/bin/zsh
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.zprofile  ~/.zprofile 
 ```
-~/.zshrc
-~/.zprofile
+
+## Tmux
 
 ## NeoVIM
 ```sh
 mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 
-# install packer
+### install packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
+Open `nvim` and install packages, `:PackerSync`
+
+### Layout
+- after/
+  - plugin -- plugin specific settings
+- ftplugin/ -- filetype specific settings
+- init.lua -- entrypoint
+- lua/ -- modules for init.lua to load
+  - set.lua -- general vim settings
+  - remap.lua -- general key bindings
+  - lsp.lua -- lsp settings and bindings
 
 ## Languages
 
@@ -53,6 +66,12 @@ rm -f ./cs
 ```
 
 ### Python
+```sh
+cargo install fnm # needed for pyright lsp
+fnm install --latest
+npm install -g pyright
+```
+
 ### Rust
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

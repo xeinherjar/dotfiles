@@ -1,3 +1,12 @@
+local lspconfig = require('lspconfig')
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+-- clojure
+-- javascript
+-- python
+lspconfig.pyright.setup {}
+-- rust
+
 -- scala
 local metals_config = require("metals").bare_config()
 metals_config.settings = {
@@ -5,8 +14,8 @@ metals_config.settings = {
   -- excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
 }
 
-metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
--- Autocmd that will actually be in charging of starting the whole thing
+metals_config.capabilities = capabilities
+-- Autocmd that will actually be in charge of starting the whole thing
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "scala", "sbt", "java" },
@@ -15,3 +24,4 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   group = nvim_metals_group,
 })
+-- typescript
