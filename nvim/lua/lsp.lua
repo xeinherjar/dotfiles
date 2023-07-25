@@ -2,9 +2,12 @@ local lspconfig = require('lspconfig')
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- clojure
+-- haskell
 -- javascript
 -- python
-lspconfig.pyright.setup {}
+lspconfig.pyright.setup {
+  capabilities = capabilities
+}
 -- rust
 
 -- scala
