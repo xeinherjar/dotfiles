@@ -50,3 +50,14 @@ export PATH="$PATH:$HOME/.cargo/bin"
 if [ -x "$(command -v fnm)" ]; then
     eval "$(fnm env)"
 fi
+
+# Work Laptop?
+[ -e ~/work/work.rc ] && source ~/work/work.rc
+
+# kubectl completes me
+if [ -x "$(command -v kubectl)" ]; then
+    source <(kubectl completion zsh)
+fi
+
+
+export EDITOR='nvim'

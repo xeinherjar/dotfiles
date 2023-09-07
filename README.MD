@@ -32,6 +32,9 @@ ln -s ~/dotfiles/.zprofile  ~/.zprofile
 ```
 
 ## Tmux
+```sh
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+```
 
 ## NeoVIM
 ```sh

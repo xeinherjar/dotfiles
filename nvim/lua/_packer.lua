@@ -9,12 +9,7 @@ return require('packer').startup(function(use)
 	'nvim-telescope/telescope.nvim', tag = '0.1.2',
 	requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use ({
-	  'hardhackerlabs/theme-vim',
-	  config = function()
-		  vim.cmd('colorscheme hardhacker')
-	  end
-  })
+  use ({ 'ellisonleao/gruvbox.nvim' })
   use {
       'nvim-treesitter/nvim-treesitter',
       run = function()
