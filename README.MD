@@ -77,6 +77,12 @@ npm install -g pyright
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+### Haskell
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+sudo apt-get install libgmp3-dev
+```
+
 
 ## Software
 ### Firefox Nightly

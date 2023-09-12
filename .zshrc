@@ -50,3 +50,5 @@ export PATH="$PATH:$HOME/.cargo/bin"
 if [ -x "$(command -v fnm)" ]; then
     eval "$(fnm env)"
 fi
+
+[ -f "/home/einherjar/.ghcup/env" ] && source "/home/einherjar/.ghcup/env" # ghcup-env
