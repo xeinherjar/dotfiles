@@ -51,4 +51,17 @@ if [ -x "$(command -v fnm)" ]; then
     eval "$(fnm env)"
 fi
 
+<<<<<<< HEAD
 [ -f "/home/einherjar/.ghcup/env" ] && source "/home/einherjar/.ghcup/env" # ghcup-env
+=======
+# Work Laptop?
+[ -e ~/work/work.rc ] && source ~/work/work.rc
+
+# kubectl completes me
+if [ -x "$(command -v kubectl)" ]; then
+    source <(kubectl completion zsh)
+fi
+
+
+export EDITOR='nvim'
+>>>>>>> ed802fbb1c1c1facce3a7a60542af0aefcbb86b6

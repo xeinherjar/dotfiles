@@ -14,6 +14,7 @@ vim.opt.wrap = false -- dont wrap lines
 vim.opt.hlsearch = true -- highlight search results
 vim.opt.incsearch = true -- show partial results while typing
 vim.opt.smartcase = true -- search is not case sensative until you use a cap
+vim.opt.ignorecase = true -- search is not case sensative until you use a cap
 
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
