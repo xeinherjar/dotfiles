@@ -49,13 +49,13 @@ Open `nvim` and install packages, `:PackerSync`
 
 ### Layout
 - after/
-  - plugin -- plugin specific settings
-- ftplugin/ -- filetype specific settings
-- init.lua -- entrypoint
-- lua/ -- modules for init.lua to load
-  - set.lua -- general vim settings
+  - plugin    -- plugin specific settings
+- ftplugin/   -- filetype specific settings
+- init.lua    -- entrypoint
+- lua/        -- modules for init.lua to load
+  - set.lua   -- general vim settings
   - remap.lua -- general key bindings
-  - lsp.lua -- lsp settings and bindings
+  - lsp.lua   -- lsp settings and bindings
 
 ## Languages
 
