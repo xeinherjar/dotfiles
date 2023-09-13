@@ -59,6 +59,14 @@ Open `nvim` and install packages, `:PackerSync`
 
 ## Languages
 
+### Clojure
+```sh
+sudo apt-get install rlwrap
+curl -L -O https://github.com/clojure/brew-install/releases/latest/download/posix-install.sh
+chmod +x posix-install.sh
+sudo ./posix-install.sh
+```
+
 ### Scala
 Install Coursier, have it manage the JVM
 ```sh

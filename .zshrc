@@ -51,9 +51,6 @@ if [ -x "$(command -v fnm)" ]; then
     eval "$(fnm env)"
 fi
 
-<<<<<<< HEAD
-[ -f "/home/einherjar/.ghcup/env" ] && source "/home/einherjar/.ghcup/env" # ghcup-env
-=======
 # Work Laptop?
 [ -e ~/work/work.rc ] && source ~/work/work.rc
 
@@ -64,4 +61,4 @@ fi
 
 
 export EDITOR='nvim'
->>>>>>> ed802fbb1c1c1facce3a7a60542af0aefcbb86b6
+[ -f "/home/einherjar/.ghcup/env" ] && source "/home/einherjar/.ghcup/env" # ghcup-env
