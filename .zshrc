@@ -61,3 +61,4 @@ fi
 
 
 export EDITOR='nvim'
+[ -f "/home/einherjar/.ghcup/env" ] && source "/home/einherjar/.ghcup/env" # ghcup-env

@@ -59,6 +59,14 @@ Open `nvim` and install packages, `:PackerSync`
 
 ## Languages
 
+### Clojure
+```sh
+sudo apt-get install rlwrap
+curl -L -O https://github.com/clojure/brew-install/releases/latest/download/posix-install.sh
+chmod +x posix-install.sh
+sudo ./posix-install.sh
+```
+
 ### Scala
 Install Coursier, have it manage the JVM
 ```sh
@@ -78,6 +86,12 @@ npm install -g pyright
 ### Rust
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+### Haskell
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+sudo apt-get install libgmp3-dev
 ```
 
 
