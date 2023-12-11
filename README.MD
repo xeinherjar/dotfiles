@@ -94,12 +94,29 @@ curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 sudo apt-get install libgmp3-dev
 ```
 
+### Zig
+```sh
+curl -Lv https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.1802+56deb5b05.tar.xz
+tar -xf zig-linux-x86_64-0.12.0-dev.1802+56deb5b05.tar.xz
+sudo mv zig.. /opt/zig
+sudo ln -s /opt/zig/zig /usr/local/bin/zig
+```
+
 
 ## Software
+### Ghostty
+```sh
+sudo apt install libgtk-4-dev
+sudo apt install libadwaita-1-dev
+zig build -p $HOME/.local -Doptimize=ReleaseFast
+mkdir .config/ghostty
+ln -s ~/dotfiles/ghostty ~/.config/ghostty/config
+```
+
 ### Firefox Nightly
 ```sh
 curl -Lv "https://download.mozilla.org/?product=firefox-nightly-latest-ssl&os=linux64&lang=en-US" -o firefox-nightly.tar.bz2 
-tar xvf firefox-nightly.tar.bz2
+tar -xvf firefox-nightly.tar.bz2
 sudo mv firefox /opt/firefox-nightly
 sudo ln -s /opt/firefox-nightly/firefox /usr/local/bin/firefox-nightly
 cat << EOF >> ~/.local/share/applications/firefox-nightly.desktop
