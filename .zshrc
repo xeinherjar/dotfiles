@@ -42,6 +42,14 @@ PROMPT='%n@%m %D %T %~ ${vcs_info_msg_0_}${NEWLINE}λ '
 
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
+# Paths
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
