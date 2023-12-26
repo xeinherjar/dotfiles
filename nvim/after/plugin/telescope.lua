@@ -35,5 +35,7 @@ vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecently 
 vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = '[F]ind [S]tring under cursor in current working directory' })
 vim.keymap.set('n', '<leader>frg', builtin.live_grep, { desc = '[F]ind by [R]ip [G]rep' })
 vim.keymap.set('n', '<leader>fts', builtin.treesitter, { desc = '[F]ind [T]reesitter [S]ymbols' })
+vim.keymap.set('n', '<leader>fs', builtin.spell_suggest, { desc = '[F]ix [S]pelling' })
+vim.keymap.set('n', '<leader>lkm', builtin.keymaps, { desc = '[L]ist [K]ey[m]aps' })
 -- TODO: quickfix, marks, loclist, jumplist, registers
 

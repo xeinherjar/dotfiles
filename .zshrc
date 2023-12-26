@@ -26,14 +26,18 @@ autoload -Uz vcs_info
     fi
 }
 
-
+# Styles
+## Git Prompt
 precmd_functions+=( vcs_info )
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' unstagedstr '!'
 zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:git:*' formats '%b [%u%c%m]'
+zstyle ':vcs_info:git:*' formats '[%b][%u%c%m]'
+
+## General
+zstyle ':completion:*' menu select
 
 setopt prompt_subst
 NEWLINE=$'\n'
@@ -69,4 +73,3 @@ fi
 
 
 export EDITOR='nvim'
-[ -f "/home/einherjar/.ghcup/env" ] && source "/home/einherjar/.ghcup/env" # ghcup-env

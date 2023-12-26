@@ -1,5 +1,5 @@
 # Dotfiles
-#
+
 ## Base
 ```sh
 sudo add-apt-repository ppa:neovim-ppa/unstable
@@ -22,7 +22,6 @@ ssh-keygen -t ed25519-sk -C "email@email.net"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519_sk
 ```
-
 
 ## Zsh
 ```sh
@@ -96,8 +95,8 @@ sudo apt-get install libgmp3-dev
 
 ### Zig
 ```sh
-curl -Lv https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.1802+56deb5b05.tar.xz
-tar -xf zig-linux-x86_64-0.12.0-dev.1802+56deb5b05.tar.xz
+curl -Lv https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.1802+56deb5b05.tar.xz -o zig.tar.xz
+tar -xf zig.tar.xz
 sudo mv zig.. /opt/zig
 sudo ln -s /opt/zig/zig /usr/local/bin/zig
 ```
@@ -108,6 +107,7 @@ sudo ln -s /opt/zig/zig /usr/local/bin/zig
 ```sh
 sudo apt install libgtk-4-dev
 sudo apt install libadwaita-1-dev
+git clone git@github.com:mitchellh/ghostty.git
 zig build -p $HOME/.local -Doptimize=ReleaseFast
 mkdir .config/ghostty
 ln -s ~/dotfiles/ghostty ~/.config/ghostty/config

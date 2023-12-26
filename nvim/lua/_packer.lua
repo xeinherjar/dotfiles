@@ -9,7 +9,12 @@ return require('packer').startup(function(use)
 	'nvim-telescope/telescope.nvim', tag = '0.1.2',
 	requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  -- colorschemes
   use ({ 'ellisonleao/gruvbox.nvim' })
+  use ({ 'folke/tokyonight.nvim' })
+
+
   use {
       'nvim-treesitter/nvim-treesitter',
       run = function()
