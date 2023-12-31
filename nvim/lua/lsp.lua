@@ -3,6 +3,10 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- clojure
 -- haskell
+lspconfig.hls.setup {
+  capabilities = capabilities,
+  filetypes = { 'haskell', 'lhaskell', 'cabal' },
+}
 -- javascript
 -- python
 lspconfig.pyright.setup {
@@ -12,6 +16,7 @@ lspconfig.pyright.setup {
 
 -- scala
 local metals_config = require("metals").bare_config()
+
 metals_config.settings = {
   showImplicitArguments = true,
   showInferredType = true,
@@ -21,6 +26,7 @@ metals_config.settings = {
 metals_config.capabilities = capabilities
 -- Autocmd that will actually be in charge of starting the whole thing
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "scala", "sbt", "java" },
   callback = function()

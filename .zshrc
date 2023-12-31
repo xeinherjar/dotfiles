@@ -73,3 +73,5 @@ fi
 
 
 export EDITOR='nvim'
+# Not sure why this is needed for it to work with tmux...
+bindkey '^R' history-incremental-search-backward
