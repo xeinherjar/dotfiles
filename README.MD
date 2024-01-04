@@ -8,6 +8,14 @@ sudo apt-get install build-essential git curl alacritty ripgrep
 sudo apt-get install neovim tmux
 ```
 
+## Fonts
+```sh
+mkdir ~/.fonts
+curl .. https://github.com/githubnext/monaspace/releases
+cp ~/...*.otf ~/.fonts
+fc-cache -f -v
+```
+
 ## Tools
 ```sh
 git config --global init.defaultBranch master
