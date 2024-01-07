@@ -24,18 +24,13 @@ require('telescope').setup {
     end,
     }
   },
-  --extensions = {},
+  extensions = {
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown {
+
+      }
+
+    }
+  },
 }
-
--- https://github.com/nvim-telescope/telescope.nvim#pickers
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles in current working directory' })
--- vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[F]ind files in the index and working tree of [G]it' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind open [B]uffers' })
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecently opened files' })
-vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = '[F]ind [S]tring under cursor in current working directory' })
-vim.keymap.set('n', '<leader>frg', builtin.live_grep, { desc = '[F]ind by [R]ip [G]rep' })
-vim.keymap.set('n', '<leader>fts', builtin.treesitter, { desc = '[F]ind [T]reesitter [S]ymbols' })
-vim.keymap.set('n', '<leader>fs', builtin.spell_suggest, { desc = '[F]ix [S]pelling' })
-vim.keymap.set('n', '<leader>lkm', builtin.keymaps, { desc = '[L]ist [K]ey[m]aps' })
--- TODO: quickfix, marks, loclist, jumplist, registers
-
+require('telescope').load_extension('ui-select')
