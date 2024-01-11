@@ -1,6 +1,16 @@
 # Dotfiles
 
 ## Base
+
+### MacOS
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/einherjar/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+### Linux
 ```sh
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
@@ -32,10 +42,10 @@ ssh-add ~/.ssh/id_ed25519_sk
 ```
 
 ## Zsh
+Don't take .zprofile, too machine specific most of the time
 ```sh
 chsh -s /usr/bin/zsh
 ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.zprofile  ~/.zprofile 
 ```
 
 ## Tmux
@@ -44,11 +54,19 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ```
 
 ## NeoVIM
+### MacOS
+```sh
+brew install neovim
+```
+
+### Linux
 ```sh
 mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
+```
 
 ### install packer
+```sh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
@@ -76,6 +94,15 @@ sudo ./posix-install.sh
 
 ### Scala
 Install Coursier, have it manage the JVM
+
+#### MacOS
+- at time of writing the one from brew doesn't work with M series chips
+```sh
+$ curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > cs
+./cs setup
+```
+
+#### Linux
 ```sh
 curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
 chmod +x cs

@@ -73,5 +73,6 @@ fi
 
 
 export EDITOR='nvim'
-# Not sure why this is needed for it to work with tmux...
-bindkey '^R' history-incremental-search-backward
+# So this is silly, if zsh sees the string vi in EDITOR it defaults to vim bindings
+# not sure if this only happens in tmux or not..., but lets unbind it
+bindkey -e
