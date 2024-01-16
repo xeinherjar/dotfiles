@@ -65,22 +65,10 @@ mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ```
 
-### install packer
-```sh
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-Open `nvim` and install packages, `:PackerSync`
-
 ### Layout
-- after/
-  - plugin    -- plugin specific settings
-- ftplugin/   -- filetype specific settings
 - init.lua    -- entrypoint
 - lua/        -- modules for init.lua to load
-  - set.lua   -- general vim settings
-  - remap.lua -- general key bindings
-  - lsp.lua   -- lsp settings and bindings
+- lua/plugins -- modules for init.lua to load
 
 ## Languages
 
@@ -108,6 +96,10 @@ curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz
 chmod +x cs
 ./cs setup --yes
 rm -f ./cs
+```
+#### Lua
+```sh
+brew install lua-language-server
 ```
 
 ### Python

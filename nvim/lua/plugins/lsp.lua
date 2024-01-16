@@ -42,6 +42,10 @@ return {
       }
       -- javascript
       -- python
+      -- lua
+      lspconfig.lua_ls.setup{
+        capabilities = capabilities
+      }
       lspconfig.pyright.setup {
         capabilities = capabilities
       }
