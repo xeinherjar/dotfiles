@@ -31,7 +31,7 @@ return {
       vim.keymap.set('n', '<leader>fts', builtin.treesitter, { desc = '[F]ind [T]reesitter [S]ymbols' })
       vim.keymap.set('n', '<leader>ss', builtin.spell_suggest, { desc = '[S]how [S]pelling' })
 
-      vim.keymap.set('n', '<leader>sqf', builtin.quickfix, { desc = '[S]how [Q]uick[fix]' })
+      vim.keymap.set('n', '<leader>sqf', builtin.quickfix, { desc = '[S]how [Q]uick[f]ix' })
       vim.keymap.set('n', '<leader>sjl', builtin.jumplist, { desc = '[S]how [J]jump [L]ist' })
       vim.keymap.set('n', '<leader>sll', builtin.loclist, { desc = '[S]how [L]ocation [L]ist' })
     end
