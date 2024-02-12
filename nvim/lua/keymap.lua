@@ -32,3 +32,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
   end,
 })
+
+
+vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous Buffer' })
+vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next Buffer' })

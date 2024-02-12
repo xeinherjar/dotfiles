@@ -102,6 +102,12 @@ rm -f ./cs
 brew install lua-language-server
 ```
 
+### Node / JavaScript
+```sh
+brew install fnm
+fnm install v21.6.1 # or whatever version
+```
+
 ### Python
 ```sh
 cargo install fnm # needed for pyright lsp
