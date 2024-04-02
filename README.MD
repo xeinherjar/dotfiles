@@ -71,6 +71,10 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 - lua/plugins -- modules for init.lua to load
 
 ## Languages
+### Common Lisp
+```sh
+brew install sbcl
+```
 
 ### Clojure
 ```sh
@@ -82,6 +86,7 @@ sudo ./posix-install.sh
 
 ### Scala
 Install Coursier, have it manage the JVM
+
 
 #### MacOS
 - at time of writing the one from brew doesn't work with M series chips
@@ -97,6 +102,13 @@ chmod +x cs
 ./cs setup --yes
 rm -f ./cs
 ```
+
+### JVM
+`cs java --jvm 21 --setup`
+- Sets `JAVA_HOME` to use 21 and install it, env is set in .zprofile
+- If you need one off for a project `eval "$(cs java --jvm 14 --env)"` to set for that shell
+
+
 #### Lua
 ```sh
 brew install lua-language-server
@@ -118,6 +130,10 @@ npm install -g pyright
 ### Rust
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add rust-src
+rustup component add rust-analyzer
+rustup component add clippy
+rustup component add rustfmt
 ```
 
 ### Haskell

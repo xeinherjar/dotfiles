@@ -43,13 +43,23 @@ return {
       -- javascript
       -- python
       -- lua
-      lspconfig.lua_ls.setup{
+      lspconfig.lua_ls.setup {
         capabilities = capabilities
       }
       lspconfig.pyright.setup {
         capabilities = capabilities
       }
       -- rust 
+      lspconfig.rust_analyzer.setup {
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          vim.lsp.inlay_hint.enable(bufnr)
+        end,
+        -- https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/generated_config.adoc
+        ['rust-analyzer'] = {
+          check = { command = 'clippy' }
+        }
+      }
       -- typescript
     end
   }

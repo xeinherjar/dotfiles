@@ -34,5 +34,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
+-- Make moving great again
 vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous Buffer' })
 vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next Buffer' })
+
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to Window Left' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to Window Below' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to Window Up' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to Window Right' })
+
+-- move by display line, not text lines
+vim.keymap.set('n', 'j', 'gj', { desc = '' })
+vim.keymap.set('n', 'k', 'gk', { desc = '' })
+
+
+
+vim.keymap.set('n', '<leader>/', ':nohlsearch<CR>', { desc = 'Turn off search results' })

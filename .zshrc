@@ -71,6 +71,11 @@ if [ -x "$(command -v kubectl)" ]; then
     source <(kubectl completion zsh)
 fi
 
+# NGROCK completions
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
 
 export EDITOR='nvim'
 # So this is silly, if zsh sees the string vi in EDITOR it defaults to vim bindings

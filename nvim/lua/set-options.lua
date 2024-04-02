@@ -36,3 +36,5 @@ vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 
 vim.keymap.set('i', 'jj', '<Esc>', { desc = '<Esc> for when <Esc> is just too much' })
+
+vim.cmd([[colorscheme gruvbox]])

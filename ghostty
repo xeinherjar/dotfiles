@@ -1,5 +1,5 @@
-#theme = GruvboxDark
-theme = tokyonight-storm
+#theme = tokyonight-storm
+theme = GruvboxDark
 font-family = Monaspace Neon
 
 # disable ligatures
