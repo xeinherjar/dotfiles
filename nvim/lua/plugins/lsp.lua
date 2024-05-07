@@ -35,6 +35,11 @@ return {
       })
       -- LANGUAGES
       -- clojure
+      -- elixir
+      lspconfig.elixirls.setup {
+        cmd = { vim.fn.expand('~/software/elixir-ls/language_server.sh') },
+        capabilities = capabilities,
+      }
       -- haskell
       lspconfig.hls.setup {
         capabilities = capabilities,

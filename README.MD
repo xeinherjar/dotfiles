@@ -84,6 +84,14 @@ chmod +x posix-install.sh
 sudo ./posix-install.sh
 ```
 
+### Elixir
+```
+brew install elixir
+curl -o els.zip -fL $(curl https://api.github.com/repos/elixir-lsp/elixir-ls/releases/latest | jq -r '.assets[0].browser_download_url')
+unzip els.zip -d software/elixir-ls
+rm els.zip
+```
+
 ### Scala
 Install Coursier, have it manage the JVM
 
