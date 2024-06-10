@@ -64,7 +64,7 @@ if [ -x "$(command -v fnm)" ]; then
 fi
 
 # Work Laptop?
-[ -e ~/work/work.rc ] && source ~/work/work.rc
+[ -e ~/projects/work.rc ] && source ~/projects/work.rc
 
 # kubectl completes me
 if [ -x "$(command -v kubectl)" ]; then

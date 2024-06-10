@@ -37,4 +37,10 @@ vim.opt.spell = true
 
 vim.keymap.set('i', 'jj', '<Esc>', { desc = '<Esc> for when <Esc> is just too much' })
 
+
+vim.opt.listchars = { tab = '→·', nbsp = '␣', trail = '·' }
+vim.opt.showbreak = '↳'
+vim.opt.list = true
+
+
 vim.cmd([[colorscheme gruvbox]])
