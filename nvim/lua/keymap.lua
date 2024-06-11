@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gd', builtin.lsp_definitions, { buffer = ev.buf, desc = '[G]o to [D]efinition' })
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = '' })
     vim.keymap.set('n', 'gi', builtin.lsp_implementations, { buffer = ev.buf, desc = '[G]o to [I]mplementation' })
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = '' })
+    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = '' })
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, desc = '[W]orkspace [A]dd' })
     vim.keymap.set('n', '<leader>wd', vim.lsp.buf.remove_workspace_folder,
       { buffer = ev.buf, desc = '[W]orkspace [D]elete' })
