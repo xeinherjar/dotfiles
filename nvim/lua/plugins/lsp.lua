@@ -7,6 +7,10 @@ return {
       local metals_config = require('metals').bare_config()
 
       metals_config.settings = {
+        serverProperties = {
+          "-Xms4G",
+          "-Xmx8G",
+        },
         showImplicitArguments = true,
         showInferredType = true,
         -- excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
@@ -19,7 +23,7 @@ return {
       metals_config.on_attach = function(client, bufnr)
         require("metals").setup_dap()
       end
-   
+
 
       -- Autocmd that will actually be in charge of starting the whole thing
       local nvim_metals_group = vim.api.nvim_create_augroup('nvim-metals', { clear = true })

@@ -42,6 +42,21 @@ return {
             runType = "testTarget",
           },
         },
+        {
+          -- -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*9999
+          -- mode = 'remote',
+          name = "Remote Debug",
+          type = "scala",
+          request = "attach",
+          port = 9999,
+          host = "127.0.0.1",
+          hostName = "127.0.0.1",
+          class = "bootstrap.liftweb.Boot",
+          sourceMaps = true,
+          metals = {
+            runType = "run",
+          },
+        },
       }
 
 

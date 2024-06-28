@@ -22,8 +22,8 @@ return {
       sources = cmp.config.sources({
         { name = 'path' }, -- autocomplete file paths
         { name = 'nvim_lsp' }, -- language server suggestions
-        { name = 'vsnip' }, 
-        }, 
+        { name = 'vsnip' },
+        },
         {{ name = 'buffer' }, -- words in buffer
       }),
       mapping = cmp.mapping.preset.insert({

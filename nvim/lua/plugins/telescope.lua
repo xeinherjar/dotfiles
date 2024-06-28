@@ -7,6 +7,17 @@ return {
       local builtin = require('telescope.builtin')
 
       require('telescope').setup({
+        defaults = {
+          layout_strategy = 'vertical',
+          layout_config = { prompt_position = 'bottom' },
+          file_ignore_patterns = {
+              "^./worktrees/",
+              "^./project/",
+              "^./target/",
+              "^./.metals/",
+              "^./.bloop/"
+          },
+        },
         pickers = {
           buffers = {
           show_all_buffers = true,
@@ -16,7 +27,7 @@ return {
             return true
           end,
           }
-        }        
+        }
       })
 
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles in current working directory' })
