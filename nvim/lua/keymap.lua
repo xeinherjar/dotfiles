@@ -1,4 +1,5 @@
 local telescope = require('telescope')
+local gitsigns = require('gitsigns')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -39,7 +40,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
   end,
 })
-vim.keymap.set('n', '<leader>sm', telescope.extensions.metals.commands, { desc = '[S]how [M]etals commands' })
+
+-- Plugins
+vim.keymap.set('n', '<leader>sm', telescope.extensions.metals.commands, { desc = '[s]how [m]etals commands' })
+vim.keymap.set('n', '<leader>gbt', gitsigns.toggle_current_line_blame , { desc = '[g]it [b]lame [t]oggle' })
+vim.keymap.set('n', '<leader>gbl', function() gitsigns.blame_line{full=true} end, { desc = '[g]it [b]lame [l]ine' })
 
 
 -- Make moving great again

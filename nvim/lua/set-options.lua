@@ -43,4 +43,4 @@ vim.opt.showbreak = '↳'
 vim.opt.list = true
 
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme gruvbox-material]])
