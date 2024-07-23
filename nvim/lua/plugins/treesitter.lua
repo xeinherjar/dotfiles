@@ -16,9 +16,19 @@ return {
   {
     'nvim-treesitter/nvim-treesitter-context',
     config = function()
-      require('treesitter-context').setup {
-        enable = true
+      local context = require('treesitter-context')
+      context.setup {
+        enable = false,
+        patterns = {
+          default = {
+            'class',
+            'function',
+            'method',
+          }
+        }
       }
+      vim.keymap.set('n', '[c', function() context.go_to_context(vim.v.count1) end, { silent = true })
+      vim.keymap.set('n', 'tcc', context.toggle , { desc = '[t]oggle [c]ode [c]ontext' })
     end
   }
 }

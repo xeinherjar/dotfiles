@@ -28,33 +28,39 @@ return {
       dap.configurations.scala = {
         {
           type = "scala",
-          request = "launch",
-          name = "Run or Test Target",
-          metals = {
-            runType = "runOrTestFile",
-          },
-        },
-        {
-          type = "scala",
-          request = "launch",
-          name = "Test Target",
-          metals = {
-            runType = "testTarget",
-          },
-        },
-        {
-          -- -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*9999
-          -- mode = 'remote',
-          name = "Remote Debug",
-          type = "scala",
           request = "attach",
+          name = "gqd debugger",
+          hostName = "localhost",
+          port = "9999",
+        },
+        {
+          type = 'scala',
+          request = 'launch',
+          name = 'Run or Test Target',
+          metals = {
+            runType = 'runOrTestFile',
+          },
+        },
+        {
+          type = 'scala',
+          request = 'launch',
+          name = 'Test Target',
+          metals = {
+            runType = 'testTarget',
+          },
+        },
+        {
+          name = 'Remote Debug',
+          type = 'scala',
+          request = 'attach',
           port = 9999,
-          host = "127.0.0.1",
-          hostName = "127.0.0.1",
-          class = "bootstrap.liftweb.Boot",
+          host = '127.0.0.1',
+          hostName = '127.0.0.1',
+          class = 'bootstrap.liftweb.Boot',
+          buildTarget = 'main',
           sourceMaps = true,
           metals = {
-            runType = "run",
+            runType = 'run',
           },
         },
       }
@@ -62,7 +68,7 @@ return {
 
       vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = '[d]ap [b]reakpoint' })
       vim.keymap.set('n', '<leader>dc', dap.continue, { desc = '[d]ap [c]ontinue' })
-      vim.keymap.set('n', '<leader>d?', function ()
+      vim.keymap.set('n', '<leader>d?', function()
         dapui.eval(nil, { enter = true })
       end)
       vim.keymap.set('n', '<leader>dq', dap.disconnect, { desc = '[d]ap [q]uit' })

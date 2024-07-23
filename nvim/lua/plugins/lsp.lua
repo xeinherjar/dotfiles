@@ -7,16 +7,16 @@ return {
       local metals_config = require('metals').bare_config()
 
       metals_config.settings = {
+        -- excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
         serverProperties = {
           "-Xms4G",
           "-Xmx8G",
         },
         showImplicitArguments = true,
         showInferredType = true,
-        -- excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
         testUserInterface = 'Test Explorer',
       }
-
+      metals_config.init_options.statusBarProvider = 'on'
       metals_config.capabilities = capabilities
 
       -- DAP Settings
