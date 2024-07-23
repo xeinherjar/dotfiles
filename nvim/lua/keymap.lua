@@ -34,6 +34,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, { buffer = ev.buf, desc = '[F]ormat file' })
 
     -- Diagnostics
+    vim.keymap.set('n', '<leader>sld', function() vim.diagnostic.open_float(0, { scope = 'line' }) end, { desc = '[S]how [L]ine [D]iagnostics' })
     vim.keymap.set('n', '<leader>sbd', function(bufnr) builtin.diagnostics(bufnr) end, { desc = '[S]how [B]uffer [D]iagnostics' })
     vim.keymap.set('n', '<leader>sad', builtin.diagnostics, { desc = '[S]how [A]ll [D]iagnostics' })
     vim.keymap.set('n', '<leader>tt', trouble.toggle, { buffer = ev.buf, desc = '[T]rouble [T]oggle' })
