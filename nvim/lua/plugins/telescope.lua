@@ -39,7 +39,7 @@ return {
       vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind open [B]uffers' })
       vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecently opened files' })
       vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = '[F]ind [S]tring under cursor in current working directory' })
-      vim.keymap.set('n', '<leader>frg', function() builtin.live_grep({ additional_args = { "--hidden" }}) end, { desc = '[F]ind by [R]ip [G]rep' })
+      vim.keymap.set('n', '<leader>frg', function() builtin.live_grep({ additional_args = { '--hidden', '--glob', '!**/.git/*' }}) end, { desc = '[F]ind by [R]ip [G]rep' })
       vim.keymap.set('n', '<leader>fts', builtin.treesitter, { desc = '[F]ind [T]reesitter [S]ymbols' })
       vim.keymap.set('n', '<leader>ss', builtin.spell_suggest, { desc = '[S]how [S]pelling' })
 
