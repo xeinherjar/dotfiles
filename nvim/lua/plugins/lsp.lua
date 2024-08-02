@@ -16,7 +16,7 @@ return {
         showInferredType = true,
         testUserInterface = 'Test Explorer',
       }
-      metals_config.init_options.statusBarProvider = 'on'
+      metals_config.init_options.statusBarProvider = 'off'
       metals_config.capabilities = capabilities
 
       -- DAP Settings
