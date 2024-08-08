@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = '[D]efinition' })
     vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = ev.buf, desc = 'Rename' })
-    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = ev.buf, desc = '[C]ode [A]ction' })
+    vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { buffer = ev.buf, desc = '[C]ode [A]ction' })
     vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format { async = true }
     end, { buffer = ev.buf, desc = '[F]ormat file' })
@@ -51,6 +51,9 @@ vim.keymap.set('n', '<leader>gbl', function() gitsigns.blame_line{full=true} end
 -- Make moving great again
 vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous Buffer' })
 vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next Buffer' })
+
+vim.keymap.set('n', '[j', '<C-o>', { desc = 'Previous Jump Position' })
+vim.keymap.set('n', ']j', '<C-i>', { desc = 'Next Jump Postion' })
 
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to Window Left' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to Window Below' })

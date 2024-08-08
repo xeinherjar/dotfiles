@@ -15,7 +15,8 @@ return {
               "^./project/",
               "^./target/",
               "^./.metals/",
-              "^./.bloop/"
+              "^./.bloop/",
+              "^./.venv/"
           },
         },
         pickers = {
