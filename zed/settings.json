@@ -1,0 +1,63 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "vim_mode": true,
+  "telemetry": {
+    "metrics": false
+  },
+  "relative_line_numbers": true,
+  "languages": {
+    "Python": {
+      "tab_size": 4
+    },
+    "Scala": {
+      "tab_size": 2
+    },
+    "Rust": {
+      "tab_size": 4
+    }
+  },
+  "tab_size": 2,
+  "ui_font_family": "Monaspace Neon",
+  "ui_font_size": 14,
+  "buffer_font_size": 12,
+  "buffer_font_family": "Monaspace Neon",
+  "buffer_line_height": "comfortable",
+  "ensure_final_newline_on_save": false,
+  "show_whitespaces": "boundary",
+  "remove_trailing_whitespace_on_save": true,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Duskfox"
+  },
+  "wrap_guides": [80, 120],
+  "tabs": {
+    "git_status": true
+  },
+  "soft_wrap": "none",
+  "project_panel": {},
+  "tab_bar": { "show": false },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "scala": true,
+    "toml": true,
+    "nvim-nightfox": true
+  }
+}
