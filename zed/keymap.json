@@ -1,0 +1,36 @@
+[
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space f": "editor::Format",
+      "space f f": "file_finder::Toggle",
+      "space space": "command_palette::Toggle",
+      "[ b": "pane::ActivatePrevItem",
+      "] b": "pane::ActivateNextItem",
+      "[ j": "pane::GoBack",
+      "] j": "pane::GoForward",
+      "g i": "editor::GoToImplementation",
+      "g d": "editor::GoToDefinition",
+      "g r": "editor::FindAllReferences",
+      "space f b": "tab_switcher::Toggle",
+      "space c a": "editor::ToggleCodeActions",
+      "space b d": "pane::CloseActiveItem",
+      "cmd-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "cmd-w j": ["workspace::ActivatePaneInDirection", "Down"],
+      "cmd-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "cmd-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "cmd-w H": ["workspace::SwapPaneInDirection", "Left"],
+      "cmd-w J": ["workspace::SwapPaneInDirection", "Down"],
+      "cmd-w K": ["workspace::SwapPaneInDirection", "Up"],
+      "cmd-w L": ["workspace::SwapPaneInDirection", "Right"],
+      "cmd-w |": "workspace::NewFileSplitVertical",
+      "cmd-w -": "workspace::NewFileSplitHorizontal"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": ["workspace::SendKeystrokes", "escape"]
+    }
+  }
+]
