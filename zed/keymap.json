@@ -24,7 +24,9 @@
       "cmd-w K": ["workspace::SwapPaneInDirection", "Up"],
       "cmd-w L": ["workspace::SwapPaneInDirection", "Right"],
       "cmd-w |": "workspace::NewFileSplitVertical",
-      "cmd-w -": "workspace::NewFileSplitHorizontal"
+      "cmd-w -": "workspace::NewFileSplitHorizontal",
+      "space n t": "workspace::ToggleLeftDock",
+      "space f r g": "workspace::NewSearch"
     }
   },
   {
