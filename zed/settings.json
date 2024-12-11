@@ -43,7 +43,7 @@
   },
   "soft_wrap": "none",
   "project_panel": {},
-  "tab_bar": { "show": false },
+  "tab_bar": { "show": true },
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware"
@@ -52,7 +52,7 @@
     "enabled": true
   },
   "scrollbar": {
-    "show": "never"
+    "show": "always"
   },
   "auto_install_extensions": {
     "html": true,
