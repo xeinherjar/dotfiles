@@ -19,6 +19,12 @@ sudo apt-get install neovim tmux
 ```
 
 ## Fonts
+### MacOS
+```sh
+brew tap homebrew/cask-fonts
+brew install font-monaspace
+
+### Linux
 ```sh
 mkdir ~/.fonts
 curl .. https://github.com/githubnext/monaspace/releases

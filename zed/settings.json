@@ -21,6 +21,20 @@
     },
     "Rust": {
       "tab_size": 4
+    },
+    "XML": {
+      "tab_size": 2,
+      "prettier": {
+        "printWidth": 120,
+        "parser": "xml",
+        "allowed": true,
+        "plugins": ["@prettier/plugin-xml"],
+        "bracketSameLine": true,
+        "singleAttributePerLine": false,
+        "xmlWhitespaceSensitivity": "strict",
+        "xmlselfClosingSpace": true
+      },
+      "format_on_save": "off"
     }
   },
   "tab_size": 2,
@@ -52,12 +66,22 @@
     "enabled": true
   },
   "scrollbar": {
-    "show": "always"
+    "show": "auto"
   },
   "auto_install_extensions": {
     "html": true,
     "scala": true,
     "toml": true,
     "nvim-nightfox": true
+  },
+  "lsp": {
+    "metals": {
+      "binary": {
+        "arguments": ["-Dmetals.http=on"]
+      },
+      "initialization_options": {
+        "isHttpEnabled": true
+      }
+    }
   }
 }
