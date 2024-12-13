@@ -9,8 +9,8 @@ return {
       metals_config.settings = {
         -- excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
         serverProperties = {
-          "-Xms4G",
-          "-Xmx8G",
+          "-XX:+UseG1GC",
+          "-XX:+UseStringDeduplication",
         },
         showImplicitArguments = true,
         showInferredType = true,
