@@ -31,7 +31,7 @@ return {
           request = "attach",
           name = "gqd debugger",
           hostName = "localhost",
-          port = "9999",
+          port = 9999,
           buildTarget = "root"
         },
         {
