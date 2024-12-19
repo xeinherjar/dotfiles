@@ -3,7 +3,7 @@ return {
     'scalameta/nvim-metals',
     dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
       local metals_config = require('metals').bare_config()
 
       metals_config.settings = {
@@ -41,7 +41,7 @@ return {
     'neovim/nvim-lspconfig',
     config = function()
       local lspconfig = require('lspconfig')
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
       })
