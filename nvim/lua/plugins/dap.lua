@@ -27,12 +27,12 @@ return {
 
       dap.configurations.scala = {
         {
-          type = "scala",
-          request = "attach",
-          name = "gqd debugger",
-          hostName = "localhost",
+          type = 'scala',
+          request = 'attach',
+          name = 'Remote Jetty Debug',
+          hostName = 'localhost',
           port = 9999,
-          buildTarget = "root"
+          buildTarget = 'root'
         },
         {
           type = 'scala',
@@ -50,20 +50,6 @@ return {
             runType = 'testTarget',
           },
         },
-        {
-          name = 'Remote Debug',
-          type = 'scala',
-          request = 'attach',
-          port = 9999,
-          host = '127.0.0.1',
-          hostName = '127.0.0.1',
-          class = 'bootstrap.liftweb.Boot',
-          buildTarget = 'main',
-          sourceMaps = true,
-          metals = {
-            runType = 'run',
-          },
-        },
       }
 
 
@@ -72,7 +58,11 @@ return {
       vim.keymap.set('n', '<leader>d?', function()
         dapui.eval(nil, { enter = true })
       end)
-      vim.keymap.set('n', '<leader>dq', dap.disconnect, { desc = '[d]ap [q]uit' })
+      vim.keymap.set('n', '<leader>dq', function()
+          dap.disconnect()
+          dapui.close()
+        end,
+        { desc = '[d]ap [q]uit' })
     end
   }
 }

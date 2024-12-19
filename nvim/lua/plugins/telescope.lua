@@ -11,12 +11,12 @@ return {
           layout_strategy = 'vertical',
           layout_config = { prompt_position = 'bottom' },
           file_ignore_patterns = {
-              "^./worktrees/",
-              "^./project/",
-              "^./target/",
-              "^./.metals/",
-              "^./.bloop/",
-              "^./.venv/"
+              '^./worktrees/',
+              '^./project/',
+              '^./target/',
+              '^./.metals/',
+              '^./.bloop/',
+              '^./.venv/'
           },
         },
         pickers = {

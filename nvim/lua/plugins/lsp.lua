@@ -9,8 +9,8 @@ return {
       metals_config.settings = {
         -- excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
         serverProperties = {
-          "-XX:+UseG1GC",
-          "-XX:+UseStringDeduplication",
+          '-XX:+UseG1GC',
+          '-XX:+UseStringDeduplication',
         },
         showImplicitArguments = true,
         showInferredType = true,
@@ -21,7 +21,7 @@ return {
 
       -- DAP Settings
       metals_config.on_attach = function(client, bufnr)
-        require("metals").setup_dap()
+        require('metals').setup_dap()
       end
 
 
@@ -43,7 +43,7 @@ return {
       local lspconfig = require('lspconfig')
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
       })
       -- LANGUAGES
       -- clojure
@@ -66,7 +66,7 @@ return {
       lspconfig.pyright.setup {
         capabilities = capabilities
       }
-      -- rust 
+      -- rust
       lspconfig.rust_analyzer.setup {
         capabilities = capabilities,
         on_attach = function(client, bufnr)
