@@ -24,8 +24,16 @@ return {
       dap.listeners.before.event_exited.dapui_config = function()
         dapui.close()
       end
-
       dap.configurations.scala = {
+      {
+          type = 'scala',
+          request = 'attach',
+          name = 'Remote Jetty Debug - K8s DEV',
+          hostName = 'argos-server.dev.topgolf.io',
+          port = 9999,
+          buildTarget = 'root'
+        },
+
         {
           type = 'scala',
           request = 'attach',
