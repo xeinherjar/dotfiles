@@ -182,8 +182,7 @@ sudo apt install libgtk-4-dev
 sudo apt install libadwaita-1-dev
 git clone git@github.com:mitchellh/ghostty.git
 zig build -p $HOME/.local -Doptimize=ReleaseFast
-mkdir .config/ghostty
-ln -s ~/dotfiles/ghostty ~/.config/ghostty/config
+ln -s ~/dotfiles/ghostty ~/.config/ghostty
 ```
 
 ### Firefox Nightly

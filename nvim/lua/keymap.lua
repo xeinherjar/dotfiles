@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = '' })
     vim.keymap.set('n', 'gi', builtin.lsp_implementations, { buffer = ev.buf, desc = '[G]o to [I]mplementation' })
     vim.keymap.set('n', 'gr', builtin.lsp_references, { buffer = ev.buf, desc = '[G]o to [R]eferences' })
+    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = '[G]o to [T]ype Definition' })
     -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = '' })
 
     -- Workspaces
