@@ -1,5 +1,5 @@
 #theme = tokyonight-storm
-theme = GruvboxDark
+theme = nightfox
 font-family = Monaspace Neon
 
 # disable ligatures
@@ -19,3 +19,6 @@ font-feature = "-calt"
 
 # Don't prompt on paste
 clipboard-paste-protection = false
+
+# quake mode
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
