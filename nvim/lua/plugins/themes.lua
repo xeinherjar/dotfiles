@@ -5,7 +5,7 @@ return {
     priority = 1000,
     opts = {}
   },
-  { 
+  {
    'ellisonleao/gruvbox.nvim',
     priority = 1000 ,
     config = true,
@@ -23,7 +23,7 @@ return {
     end
   },
   {
-    'EdenEast/nightfox.nvim',
+    'EdenEast/nightfox.nvim', -- for duskfox
     lazy = false,
     priority = 1000,
     opts = {}
