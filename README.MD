@@ -168,7 +168,8 @@ sudo apt-get install libgmp3-dev
 
 ### Zig
 ```sh
-curl -Lv https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.1802+56deb5b05.tar.xz -o zig.tar.xz
+curl https://ziglang.org/download/index.json | jq '.master["aarch64-macos"].tarball'
+curl -Lv OUTPUT -o zig.tar.xz
 tar -xf zig.tar.xz
 sudo mv zig.. /opt/zig
 sudo ln -s /opt/zig/zig /usr/local/bin/zig
