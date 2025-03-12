@@ -25,23 +25,6 @@ return {
         dapui.close()
       end
       dap.configurations.scala = {
-      {
-          type = 'scala',
-          request = 'attach',
-          name = 'Remote Jetty Debug - K8s DEV',
-          hostName = 'argos-server.dev.topgolf.io',
-          port = 9999,
-          buildTarget = 'root'
-        },
-
-        {
-          type = 'scala',
-          request = 'attach',
-          name = 'Remote Jetty Debug',
-          hostName = 'localhost',
-          port = 9999,
-          buildTarget = 'root'
-        },
         {
           type = 'scala',
           request = 'launch',
@@ -60,6 +43,16 @@ return {
         },
       }
 
+      -- Try to load work-specific configurations if they exist, currently only DAP
+      local home = os.getenv("HOME")
+      local work_config_path = home .. "/projects/work.dap.lua"
+      local work_loader, err = loadfile(work_config_path)
+      local work_configs = work_loader()
+      if work_configs and work_configs.scala then
+        for _, config in ipairs(work_configs.scala) do
+          table.insert(dap.configurations.scala, config)
+        end
+      end
 
       vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = '[d]ap [b]reakpoint' })
       vim.keymap.set('n', '<leader>dc', dap.continue, { desc = '[d]ap [c]ontinue' })
