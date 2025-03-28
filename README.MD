@@ -145,6 +145,7 @@ fnm install v21.6.1 # or whatever version
 ```
 
 ### Python
+- TODO: look into https://docs.astral.sh/uv/
 ```sh
 cargo install fnm # needed for pyright lsp
 fnm install --latest

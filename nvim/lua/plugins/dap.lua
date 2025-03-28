@@ -47,10 +47,12 @@ return {
       local home = os.getenv("HOME")
       local work_config_path = home .. "/projects/work.dap.lua"
       local work_loader, err = loadfile(work_config_path)
-      local work_configs = work_loader()
-      if work_configs and work_configs.scala then
-        for _, config in ipairs(work_configs.scala) do
-          table.insert(dap.configurations.scala, config)
+      if work_loader then
+        local work_configs = work_loader()
+        if work_configs and work_configs.scala then
+          for _, config in ipairs(work_configs.scala) do
+            table.insert(dap.configurations.scala, config)
+          end
         end
       end
 
