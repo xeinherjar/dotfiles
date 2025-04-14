@@ -81,3 +81,7 @@ export EDITOR='nvim'
 # So this is silly, if zsh sees the string vi in EDITOR it defaults to vim bindings
 # not sure if this only happens in tmux or not..., but lets unbind it
 bindkey -e
+
+if [ -d "$HOME/.config/emacs/bin" ] ; then
+  export PATH="$HOME/.config/emacs/bin:$PATH"
+fi

@@ -69,6 +69,19 @@ ln -s ~/dotfiles/zed/settings.json ~/.config/zed/settings.json
 ln -s ~/dotfiles/zed/keymap.json ~/.config/zed/keymap.json
 ```
 
+## Emacs
+```sh
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+brew install ispell
+brew services start d12frosted/emacs-plus/emacs-plus@30
+ln -sf ~/dotfiles/doom ~/.config/doom
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+~/.emacs.d/bin/doom sync
+osascript -e 'tell application "Finder" to make alias file to posix file "/opt/homebrew/opt/emacs-plus@30/Emacs.app" at posix file "/Applications" with properties {name:"Emacs.app"}'
+``
+
 ## NeoVIM
 ### MacOS
 ```sh
