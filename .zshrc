@@ -82,6 +82,6 @@ export EDITOR='nvim'
 # not sure if this only happens in tmux or not..., but lets unbind it
 bindkey -e
 
-if [ -d "$HOME/.config/emacs/bin" ] ; then
-  export PATH="$HOME/.config/emacs/bin:$PATH"
+if [ -d "$HOME/.emacs.d/bin" ] ; then
+  export PATH="$HOME/.emacs.d/bin:$PATH"
 fi

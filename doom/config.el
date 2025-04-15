@@ -36,7 +36,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -87,3 +87,73 @@
            :if-new (file+head "%<%Y-%m-%d>.org"
                               "#+title: %<%A, %B %d, %Y>\n")
            :unnarrowed t))))
+
+;; Helpers - ChatGPT Generated
+(defvar my/org-roam-dailies-triple-view-open nil
+  "Flag to track if the triple daily view is open.")
+
+(defvar my/org-roam-dailies-triple-view--saved-config nil
+  "Saved window configuration before opening the triple-pane daily view.")
+
+(defun my/org-roam-dailies-triple-view-toggle ()
+  "Toggle a 3-pane layout: yesterday, today, tomorrow's org-roam dailies."
+  (interactive)
+  (require 'org-roam-dailies)
+  (if my/org-roam-dailies-triple-view-open
+      ;; Restore previous layout
+        (when my/org-roam-dailies-triple-view--saved-config
+        (set-window-configuration my/org-roam-dailies-triple-view--saved-config)
+        (setq my/org-roam-dailies-triple-view--saved-config nil)
+        (setq my/org-roam-dailies-triple-view-open nil))
+      (progn
+        (setq my/org-roam-dailies-triple-view--saved-config (current-window-configuration))
+        (delete-other-windows)
+
+      ;; Center: today
+      (org-roam-dailies-goto-today)
+
+      ;; Left: yesterday
+      (let ((left (split-window nil nil 'left)))
+        (select-window left)
+        (org-roam-dailies-goto-yesterday 1))
+
+      ;; Return to center
+      (other-window -1)
+
+      ;; Right: tomorrow
+      (let ((right (split-window nil nil 'right)))
+        (select-window right)
+        (org-roam-dailies-goto-tomorrow 1))
+
+      ;; Return to center
+      (other-window 1)
+
+      ;; Make all three windows the same size
+      (balance-windows)
+      (setq my/org-roam-dailies-triple-view-open t))))
+
+
+(defvar my/org-roam-note-side-buffer nil
+  "Buffer for the temporary right-side note.")
+
+(defun my/org-roam-note-side-toggle ()
+  "Toggle a right-side window for an Org-roam note."
+  (interactive)
+  (if (and my/org-roam-note-side-buffer
+           (get-buffer-window my/org-roam-note-side-buffer))
+      (progn
+        (delete-window (get-buffer-window my/org-roam-note-side-buffer))
+        (setq my/org-roam-note-side-buffer nil))
+    (let ((note (org-roam-node-read)))
+      (setq my/org-roam-note-side-buffer (find-file-noselect (org-roam-node-file note)))
+      (select-window (split-window-right))
+      (switch-to-buffer my/org-roam-note-side-buffer)
+      (other-window -1))))
+
+;; KEYBINDS
+(map! :leader
+      :desc "Toggle triple daily view"
+      "n r 3" #'my/org-roam-dailies-triple-view-toggle
+
+      :desc "Toggle side note"
+      "n r s" #'my/org-roam-note-side-toggle)
