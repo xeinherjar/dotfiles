@@ -1,6 +1,6 @@
 # aesthetics
 theme = duskfox
-font-family = Monaspace Neon
+font-family = "Monaspace Neon"
 background-opacity = 0.98
 background-blur-radius = 20
 
