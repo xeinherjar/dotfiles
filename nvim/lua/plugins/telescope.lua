@@ -1,6 +1,6 @@
 return {
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       local actions = require('telescope.actions')
@@ -35,12 +35,14 @@ return {
       vim.keymap.set('n', '<leader>lkm', builtin.keymaps, { desc = '[L]ist [K]ey[m]aps' })
       vim.keymap.set('n', '<leader>ff', function() 
         builtin.find_files({ find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' }}) end,
-        { desc = '[F]ind [F]iles in current working directory' }) 
+        { desc = '[F]ind [F]iles in current working directory' })
       vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[F]ind files in the index and working tree of [G]it' })
       vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind open [B]uffers' })
       vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecently opened files' })
       vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = '[F]ind [S]tring under cursor in current working directory' })
+      vim.keymap.set('n', '<leader>*', builtin.grep_string, { desc = '[F]ind [S]tring under cursor in current working directory' })
       vim.keymap.set('n', '<leader>frg', function() builtin.live_grep({ additional_args = { '--hidden', '--glob', '!**/.git/*' }}) end, { desc = '[F]ind by [R]ip [G]rep' })
+      vim.keymap.set('n', '<leader>/', function() builtin.live_grep({ additional_args = { '--hidden', '--glob', '!**/.git/*' }}) end, { desc = '[F]ind by [R]ip [G]rep' })
       vim.keymap.set('n', '<leader>fts', builtin.treesitter, { desc = '[F]ind [T]reesitter [S]ymbols' })
       vim.keymap.set('n', '<leader>ss', builtin.spell_suggest, { desc = '[S]how [S]pelling' })
 

@@ -40,44 +40,10 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
-      local lspconfig = require('lspconfig')
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
-      })
-      -- LANGUAGES
-      -- clojure
-      -- elixir
-      lspconfig.elixirls.setup {
-        cmd = { vim.fn.expand('~/software/elixir-ls/language_server.sh') },
-        capabilities = capabilities,
-      }
-      -- haskell
-      lspconfig.hls.setup {
-        capabilities = capabilities,
-        filetypes = { 'haskell', 'lhaskell', 'cabal' },
-      }
-      -- javascript
-      -- python
-      -- lua
-      lspconfig.lua_ls.setup {
-        capabilities = capabilities
-      }
-      lspconfig.pyright.setup {
-        capabilities = capabilities
-      }
-      -- rust
-      lspconfig.rust_analyzer.setup {
-        capabilities = capabilities,
-        on_attach = function(client, bufnr)
-          vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-        end,
-        -- https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/generated_config.adoc
-        ['rust-analyzer'] = {
-          check = { command = 'clippy' }
-        }
-      }
-      -- typescript
+    -- TODO: keep stuff in lua/lsp.lua and copy configs to lsp/
+    -- or move vim.lsp.enable to here for configs pulled from nvim-lspconfig?
+    -- as of 11.2 and https://github.com/neovim/nvim-lspconfig/issues/3494 
+    -- blink.cmp capabilities should be auto found
     end
   }
 }

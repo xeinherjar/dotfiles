@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     local builtin = require('telescope.builtin')
-    local trouble = require('trouble')
+    -- local trouble = require('trouble')
     -- Enable completion triggered by <c-x><c-o>
     --vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
@@ -38,7 +38,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>sld', function() vim.diagnostic.open_float(0, { scope = 'line' }) end, { desc = '[S]how [L]ine [D]iagnostics' })
     vim.keymap.set('n', '<leader>sbd', function(bufnr) builtin.diagnostics(bufnr) end, { desc = '[S]how [B]uffer [D]iagnostics' })
     vim.keymap.set('n', '<leader>sad', builtin.diagnostics, { desc = '[S]how [A]ll [D]iagnostics' })
-    vim.keymap.set('n', '<leader>tt', trouble.toggle, { buffer = ev.buf, desc = '[T]rouble [T]oggle' })
+    vim.keymap.set('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end, { desc = '[T]oggle [D]iagnostics' })
+    -- vim.keymap.set('n', '<leader>tt', trouble.toggle, { buffer = ev.buf, desc = '[T]rouble [T]oggle' })
 
   end,
 })
