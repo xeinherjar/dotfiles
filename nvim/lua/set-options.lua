@@ -50,6 +50,6 @@ vim.opt.winborder = "rounded"
 vim.cmd([[colorscheme duskfox]])
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
+  pattern = { 'elixir' },
   callback = function() vim.treesitter.start() end,
 })

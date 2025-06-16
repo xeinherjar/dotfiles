@@ -6,8 +6,10 @@ return {
     config = function()
       local ts = require('nvim-treesitter')
       ts.install(
-        { 'vimdoc', 'javascript', 'typescript', 'scala', 'lua', 'rust', 'python', 'haskell', 'bash', 'elixir', 'heex',
-          'eex', 'markdown', 'markdown_inline', 'xml', 'html', 'yaml', 'latex', 'zig' }
+        { 'vimdoc', 'javascript', 'typescript', 'scala', 'lua', 'rust', 'python',
+          'haskell', 'bash', 'elixir', 'heex', 'eex', 'markdown', 'markdown_inline',
+          'xml', 'html', 'yaml', 'latex', 'zig'
+        }
       )
     end
   },

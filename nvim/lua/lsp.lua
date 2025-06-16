@@ -1,5 +1,5 @@
 vim.lsp.config('elixirls', {
-  cmd = { '~/software/elixir-ls/language_server.sh' }
+  cmd = { vim.fn.expand('~/software/elixir-ls/language_server.sh') }
 })
 
 vim.lsp.config('rust_analyzer', {
@@ -17,6 +17,7 @@ vim.lsp.enable({
   'elixirls',
   'rust_analyzer',
   'pyright',
+  'ts_ls',
 })
 
 -- Most ideas taken from https://lsp-zero.netlify.app/blog/lsp-client-features.html
