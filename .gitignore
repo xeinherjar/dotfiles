@@ -1,2 +1,6 @@
 nvim/plugin/packer_compiled.lua
 
+
+# Work lyfe
+nvim/lua/plugins/windsurf.lua
+
