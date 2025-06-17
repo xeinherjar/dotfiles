@@ -1,5 +1,6 @@
 # aesthetics
-theme = duskfox
+# theme = duskfox
+theme = kanagawa-wave
 font-family = "Monaspace Neon"
 background-opacity = 0.90
 background-blur-radius = 20
