@@ -1,6 +1,8 @@
 return {
   'folke/snacks.nvim',
   enabled = true,
+  ---@module 'snacks.nvim'
+  ---@type 'snacks.Config'
   opts = {
     picker = {
       layout = {

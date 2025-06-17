@@ -6,8 +6,8 @@ return {
     opts = {}
   },
   {
-   'ellisonleao/gruvbox.nvim',
-    priority = 1000 ,
+    'ellisonleao/gruvbox.nvim',
+    priority = 1000,
     config = true,
     lazy = false,
     opts = {}
@@ -27,5 +27,15 @@ return {
     lazy = false,
     priority = 1000,
     opts = {}
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    branch = "master",
+    config = function()
+      require('kanagawa').setup({
+        transparent = true,
+      });
+    end,
   }
 }

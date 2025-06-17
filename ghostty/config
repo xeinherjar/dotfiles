@@ -1,7 +1,7 @@
 # aesthetics
 theme = duskfox
 font-family = "Monaspace Neon"
-background-opacity = 0.98
+background-opacity = 0.90
 background-blur-radius = 20
 
 # disable ligatures
