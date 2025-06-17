@@ -1,22 +1,16 @@
-local telescope = require('telescope')
+local picker = require('snacks').picker
 local gitsigns = require('gitsigns')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
-    local builtin = require('telescope.builtin')
-    -- local trouble = require('trouble')
-    -- Enable completion triggered by <c-x><c-o>
-    --vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
     -- Buffer local mappings.
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = ev.buf, desc = '' })
-    vim.keymap.set('n', 'gd', builtin.lsp_definitions, { buffer = ev.buf, desc = '[G]o to [D]efinition' })
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = '' })
-    vim.keymap.set('n', 'gi', builtin.lsp_implementations, { buffer = ev.buf, desc = '[G]o to [I]mplementation' })
-    vim.keymap.set('n', 'gr', builtin.lsp_references, { buffer = ev.buf, desc = '[G]o to [R]eferences' })
+    vim.keymap.set('n', 'gd', function() picker.lsp_definitions() end, { buffer = ev.buf, desc = '[G]o to [D]efinition' })
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = 'LSP Hover' })
+    vim.keymap.set('n', 'gi', function() picker.lsp_implementations() end, { desc = '[G]o to [I]mplementation' })
+    vim.keymap.set('n', 'gr', function() picker.lsp_references() end, { desc = '[G]o to [R]eferences' })
     vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = '[G]o to [T]ype Definition' })
-    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = '' })
 
     -- Workspaces
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, desc = '[W]orkspace [A]dd' })
@@ -29,25 +23,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = '[D]efinition' })
     vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = ev.buf, desc = 'Rename' })
-    vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { buffer = ev.buf, desc = '[C]ode [A]ction' })
+    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = ev.buf, desc = '[C]ode [A]ction' })
     vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format { async = true }
     end, { buffer = ev.buf, desc = '[F]ormat file' })
 
     -- Diagnostics
-    vim.keymap.set('n', '<leader>sld', function() vim.diagnostic.open_float(0, { scope = 'line' }) end, { desc = '[S]how [L]ine [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sbd', function(bufnr) builtin.diagnostics(bufnr) end, { desc = '[S]how [B]uffer [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sad', builtin.diagnostics, { desc = '[S]how [A]ll [D]iagnostics' })
-    vim.keymap.set('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end, { desc = '[T]oggle [D]iagnostics' })
-    -- vim.keymap.set('n', '<leader>tt', trouble.toggle, { buffer = ev.buf, desc = '[T]rouble [T]oggle' })
-
+    vim.keymap.set('n', '<leader>sld', function() vim.diagnostic.open_float(0, { scope = 'line' }) end,
+      { desc = '[S]how [L]ine [D]iagnostics' })
+    vim.keymap.set('n', '<leader>sbd', function() picker.diagnostics_buffer() end,
+      { desc = '[S]how [B]uffer [D]iagnostics' })
+    vim.keymap.set('n', '<leader>sad', function() picker.diagnostics() end, { desc = '[S]how [A]ll [D]iagnostics' })
+    vim.keymap.set('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end,
+      { desc = '[T]oggle [D]iagnostics' })
   end,
 })
 
 -- Plugins
-vim.keymap.set('n', '<leader>sm', telescope.extensions.metals.commands, { desc = '[s]how [m]etals commands' })
-vim.keymap.set('n', '<leader>gbt', gitsigns.toggle_current_line_blame , { desc = '[g]it [b]lame [t]oggle' })
-vim.keymap.set('n', '<leader>gbl', function() gitsigns.blame_line{full=true} end, { desc = '[g]it [b]lame [l]ine' })
+-- vim.keymap.set('n', '<leader>sm', telescope.extensions.metals.commands, { desc = '[s]how [m]etals commands' })
+vim.keymap.set('n', '<leader>gbt', gitsigns.toggle_current_line_blame, { desc = '[g]it [b]lame [t]oggle' })
+vim.keymap.set('n', '<leader>gbl', function() gitsigns.blame_line { full = true } end, { desc = '[g]it [b]lame [l]ine' })
 
 
 -- Make moving great again
