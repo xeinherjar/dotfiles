@@ -7,6 +7,11 @@
   "diagnostics.globals": ["vim", "Snacks"],
   "workspace.checkThirdParty": false,
   "workspace.library": [
-    "$VIMRUNTIME"
+    "$VIMRUNTIME",
+    "${workspaceFolder}",
+    "${workspaceFolder}/lua",
+    "${env:VIMRUNTIME}/lua",
+    "${env:XDG_DATA_HOME}/nvim/lazy",
+    "${env:HOME}/.local/share/nvim/lazy"
   ]
 }

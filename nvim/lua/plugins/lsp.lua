@@ -15,6 +15,7 @@ return {
         showImplicitArguments = true,
         showInferredType = true,
         testUserInterface = 'Test Explorer',
+        useGlobalExecutable = true,
       }
       metals_config.init_options.statusBarProvider = 'off'
       metals_config.capabilities = capabilities

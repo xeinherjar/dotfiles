@@ -47,7 +47,7 @@ vim.opt.list = true
 vim.opt.winborder = "rounded"
 
 
-vim.cmd([[colorscheme kanagawa-wave]])
+vim.cmd([[colorscheme duskfox]])
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'elixir' },
