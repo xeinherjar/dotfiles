@@ -24,7 +24,7 @@ return {
   },
   keys = {
     { '<leader>lkm', function() Snacks.picker.keymaps({ layout = 'ivy' }) end, { desc = '[L]ist [K]ey[m]aps' } },
-    { '<leader>ff',  function() Snacks.picker.files() end,                     { desc = '[F]ind [F]iles in current working directory' } }, -- why does picker.files break metals?
+    { '<leader>ff',  function() Snacks.picker.files({ layout = 'telescope' }) end,                     { desc = '[F]ind [F]iles in current working directory' } }, -- why does picker.files break metals?
     { '<leader>fg',  function() Snacks.picker.git_files() end,                 { desc = '[F]ind files in the index and working tree of [G]it' } },
     { '<leader>fb',  function() Snacks.picker.buffers() end,                   { desc = '[F]ind open [B]uffers' } },
     { '<leader>fr',  function() Snacks.picker.recent() end,                    { desc = '[F]ind [R]ecently opened files' } },
