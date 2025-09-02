@@ -10,8 +10,17 @@ vim.lsp.config('rust_analyzer', {
   }
 })
 
+-- Currently causes zls to panic
+-- vim.lsp.config('zls', {
+--   settings = {
+--     semantic_tokens = "partial",
+--     enable_build_on_save = true
+--   }
+-- })
+
 vim.lsp.enable({
   'lua-ls',
+  'zls',
   -- From nvim-lspconfig, TODO: lua/plugins/lsp.lua
   'hsl',
   'elixirls',

@@ -39,6 +39,15 @@ git config --global core.excludesfile ~/dotfiles/.gitignore_global
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
+
+### JJ
+```sh
+brew install jj
+
+$ jj config set --user user.name "Your Name"
+$ jj config set --user user.email "you@example.com"
+```
+
 ## SSH
 - insert security key
 ```sh
@@ -194,8 +203,13 @@ sudo apt-get install libgmp3-dev
 curl https://ziglang.org/download/index.json | jq '.master["aarch64-macos"].tarball'
 curl -Lv OUTPUT -o zig.tar.xz
 tar -xf zig.tar.xz
-sudo mv zig.. /opt/zig
-sudo ln -s /opt/zig/zig /usr/local/bin/zig
+mv zig.. ~/software
+ln -s ~/software/zig/zig ~/.local/bin/zig
+```
+Follow https://zigtools.org/zls/install/
+currently installing to ~/software/zls
+```
+ln -s ~/software/zls/zig-out/bin/zls ~/.local/bin/zls
 ```
 
 

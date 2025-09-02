@@ -76,6 +76,10 @@ if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
 
+if command -v jj &>/dev/null; then
+  source <(jj util completion zsh)
+fi
+
 
 export EDITOR='nvim'
 # So this is silly, if zsh sees the string vi in EDITOR it defaults to vim bindings
