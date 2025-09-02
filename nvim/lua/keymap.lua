@@ -1,5 +1,6 @@
 local picker = require('snacks').picker
 local gitsigns = require('gitsigns')
+local metals = require('metals')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -40,7 +41,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Plugins
--- vim.keymap.set('n', '<leader>sm', telescope.extensions.metals.commands, { desc = '[s]how [m]etals commands' })
+vim.keymap.set('n', '<leader>sm', metals.commands, { desc = '[s]how [m]etals commands' })
 vim.keymap.set('n', '<leader>gbt', gitsigns.toggle_current_line_blame, { desc = '[g]it [b]lame [t]oggle' })
 vim.keymap.set('n', '<leader>gbl', function() gitsigns.blame_line { full = true } end, { desc = '[g]it [b]lame [l]ine' })
 

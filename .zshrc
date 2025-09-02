@@ -15,7 +15,7 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Autoloads
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 
 # Prompt w/ git info
 autoload -Uz vcs_info
@@ -85,3 +85,5 @@ bindkey -e
 if [ -d "$HOME/.emacs.d/bin" ] ; then
   export PATH="$HOME/.emacs.d/bin:$PATH"
 fi
+
+. "$HOME/.local/bin/env"
