@@ -38,7 +38,16 @@ return {
       -- cmdline = {},
     },
 
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+    fuzzy = {
+      implementation = "prefer_rust_with_warning",
+      sorts = {
+        'exact', -- Prioritize exact matches
+        'score',
+        'sort_text',
+        'label',
+      }
+
+    }
   },
   -- allows extending the providers array elsewhere in your config
   -- without having to redefine it
