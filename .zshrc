@@ -16,6 +16,9 @@ setopt hist_find_no_dups
 
 # Autoloads
 autoload -Uz compinit && compinit
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey '^O' edit-command-line # Ctrl-o to open command in i$EDITOR to edit :)
 
 # Prompt w/ git info
 autoload -Uz vcs_info
@@ -81,7 +84,8 @@ if command -v jj &>/dev/null; then
 fi
 
 
-export EDITOR='nvim'
+export EDITOR=nvim
+export VISUAL=nvim
 # So this is silly, if zsh sees the string vi in EDITOR it defaults to vim bindings
 # not sure if this only happens in tmux or not..., but lets unbind it
 bindkey -e
