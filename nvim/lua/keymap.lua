@@ -36,7 +36,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
       { desc = '[S]how [B]uffer [D]iagnostics' })
     vim.keymap.set('n', '<leader>sad', function() picker.diagnostics() end, { desc = '[S]how [A]ll [D]iagnostics' })
     vim.keymap.set('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end,
-      { desc = '[T]oggle [D]iagnostics' })
+      { desc = '[T]oggle ghost text [D]iagnostics' })
+
+    -- Trouble Diagnostics
+    vim.keymap.set('n', '<leader>tdd', '<cmd>TroubleToggle current_file<CR>',
+      { desc = '[T]rouble [D]iagnostics [D]ocument' })
+    vim.keymap.set('n', '<leader>tdw', '<cmd>TroubleToggle workspace_diagnostics<CR>',
+      { desc = '[T]rouble [D]iagnostics [W]orkspace' })
+    vim.keymap.set('n', '<leader>tde', '<cmd>TroubleToggle errors<CR>',
+      { desc = '[T]rouble [D]iagnostics [E]rrors' })
+    vim.keymap.set('n', '<leader>tt', '<cmd>TroubleToggle<CR>',
+      { desc = '[T]rouble [T]oggle' })
   end,
 })
 

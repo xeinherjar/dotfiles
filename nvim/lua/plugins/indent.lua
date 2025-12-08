@@ -11,7 +11,7 @@ return {
         filetypes = { include_defaults = true },
       },
       static = {
-        enabled = true,
+        enabled = false,
         char = '▎',
         priority = 1,
         highlights = { 'BlinkIndentRed', 'BlinkIndentOrange', 'BlinkIndentYellow', 'BlinkIndentGreen', 'BlinkIndentViolet', 'BlinkIndentCyan' },
@@ -23,8 +23,8 @@ return {
         priority = 1000,
         -- set this to a single highlight, such as 'BlinkIndent' to disable rainbow-style indent guides
         -- highlights = { 'BlinkIndentScope' },
-        -- optionally add: 'BlinkIndentRed', 'BlinkIndentCyan', 'BlinkIndentYellow', 'BlinkIndentGreen'
-        highlights = { 'BlinkIndentOrange', 'BlinkIndentViolet', 'BlinkIndentBlue' },
+        -- highlights = { 'BlinkIndentOrange', 'BlinkIndentViolet', 'BlinkIndentBlue' },
+        highlights = { 'BlinkIndentRed', 'BlinkIndentOrange', 'BlinkIndentYellow', 'BlinkIndentGreen', 'BlinkIndentViolet', 'BlinkIndentCyan' },
         -- enable to show underlines on the line above the current scope
         underline = {
           enabled = true,

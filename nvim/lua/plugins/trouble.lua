@@ -1,7 +1,9 @@
 return {
   'folke/trouble.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  enabled = false,
+  enabled = true,
+  ---@module 'trouble'
+  ---@class trouble.Opts
   opts = {
     fold_open = 'v', -- icon used for open folds
     fold_closed = '>', -- icon used for closed folds
@@ -13,6 +15,7 @@ return {
         hint = 'hint',
         information = 'info'
     },
-    use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
+    use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
+    layout = 'bottom',
   },
 }

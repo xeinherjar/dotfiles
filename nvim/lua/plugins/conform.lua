@@ -1,8 +1,8 @@
 return {
   'stevearc/conform.nvim',
+  enabled = false,
   ---@module 'conform'
   ---@type conform.setupOpts
-  enabled = false,
   opts = {
     formatters_by_ft = {
       lua = { 'stylua' },
