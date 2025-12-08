@@ -61,6 +61,13 @@ fi
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Add golang
+if [ -d "$HOME/.local/bin" ] ; then
+    export GOPATH=$HOME/go
+    export GOBIN=$GOPATH/bin
+    export PATH=$PATH:$GOBIN
+fi
+
 # Enable FNM (fast node manager)
 if [ -x "$(command -v fnm)" ]; then
     eval "$(fnm env)"

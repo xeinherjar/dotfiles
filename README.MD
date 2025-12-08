@@ -157,6 +157,12 @@ rm -f ./cs
 - Sets `JAVA_HOME` to use 21 and install it, env is set in .zprofile
 - If you need one off for a project `eval "$(cs java --jvm 14 --env)"` to set for that shell
 
+### Golang
+```
+brew install go
+go install golang.org/x/tools/gopls@latest
+```
+
 
 #### Lua
 ```sh
