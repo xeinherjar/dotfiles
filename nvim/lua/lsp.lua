@@ -21,6 +21,7 @@ vim.lsp.config('rust_analyzer', {
 vim.lsp.enable({
   'lua-ls',
   'zls',
+  'gopls',
   -- From nvim-lspconfig, TODO: lua/plugins/lsp.lua
   'hsl',
   'elixirls',
