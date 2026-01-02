@@ -26,7 +26,7 @@ vim.lsp.enable({
   'hsl',
   'elixirls',
   'rust_analyzer',
-  'pyright',
+  'ty', -- Python
   'ts_ls',
 })
 

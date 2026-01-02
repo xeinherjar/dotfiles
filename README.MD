@@ -184,9 +184,10 @@ brew install uv
 
 LSP
 ```sh
-cargo install fnm # needed for pyright lsp
-fnm install --latest
-npm install -g pyright
+# Install
+uv tool install ty@latest
+# Update
+uv tool upgrade ty
 ```
 
 ### Rust
