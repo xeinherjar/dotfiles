@@ -161,6 +161,7 @@ rm -f ./cs
 ```
 brew install go
 go install golang.org/x/tools/gopls@latest
+brew install tree-sitter-cli # no idea why nvim-treesitter needs this
 ```
 
 
