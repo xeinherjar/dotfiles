@@ -8,7 +8,7 @@ return {
       ts.install(
         { 'vimdoc', 'javascript', 'typescript', 'scala', 'lua', 'rust', 'python',
           'haskell', 'bash', 'elixir', 'heex', 'eex', 'markdown', 'markdown_inline',
-          'xml', 'html', 'yaml', 'latex', 'zig', 'proto', 'go'
+          'xml', 'html', 'yaml', 'latex', 'zig', 'proto', 'go', 'cpp'
         }
       )
     end
@@ -18,7 +18,7 @@ return {
     config = function()
       local context = require('treesitter-context')
       context.setup {
-        enable = false,
+        enable = true,
         patterns = {
           default = {
             'class',

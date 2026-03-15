@@ -112,6 +112,13 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 - lua/plugins -- modules for init.lua to load
 
 ## Languages
+### C++
+```sh
+brew install llvm
+brew install ninja
+brew install cmake
+```
+
 ### Common Lisp
 ```sh
 brew install sbcl

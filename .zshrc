@@ -1,6 +1,9 @@
 # Created by newuser for 5.9
 source ~/.zprofile
 
+# Prevent PATH duplication when shell is re-sourced
+typeset -U PATH path
+
 # History
 HISTSIZE=9001
 HISTFILE=~/.zsh_history
@@ -13,6 +16,8 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt EXTENDED_HISTORY
+HISTTIMEFORMAT="%F %T "
 
 # Autoloads
 autoload -Uz compinit && compinit
@@ -48,7 +53,7 @@ PROMPT='%n@%m %D %T %~ ${vcs_info_msg_0_}${NEWLINE}λ '
 
 
 # XDG
-export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME="$HOME/.config"
 # Paths
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
@@ -59,13 +64,13 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # Add rustup and rust support
-export PATH="$PATH:$HOME/.cargo/bin"
+[ -d "$HOME/.cargo/bin" ] && export PATH="$PATH:$HOME/.cargo/bin"
 
 # Add golang
-if [ -d "$HOME/.local/bin" ] ; then
-    export GOPATH=$HOME/go
-    export GOBIN=$GOPATH/bin
-    export PATH=$PATH:$GOBIN
+if [ -d "$HOME/go" ] ; then
+    export GOPATH="$HOME/go"
+    export GOBIN="$GOPATH/bin"
+    export PATH="$PATH:$GOBIN"
 fi
 
 # Enable FNM (fast node manager)
@@ -89,6 +94,10 @@ fi
 if command -v jj &>/dev/null; then
   source <(jj util completion zsh)
 fi
+
+## LLVM - NOT apples...
+[ -d "/opt/homebrew/opt/llvm/bin" ] && export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 
 
 export EDITOR=nvim

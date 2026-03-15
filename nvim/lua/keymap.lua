@@ -22,8 +22,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, { buffer = ev.buf, desc = '[W]orkspace [l]ist' })
 
 
-    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = '[D]efinition' })
-    vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = ev.buf, desc = 'Rename' })
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = ev.buf, desc = 'Rename' })
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = ev.buf, desc = '[C]ode [A]ction' })
     vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format { async = true }
@@ -69,8 +68,8 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to Window Up' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to Window Right' })
 
 -- move by display line, not text lines
-vim.keymap.set('n', 'j', 'gj', { desc = '' })
-vim.keymap.set('n', 'k', 'gk', { desc = '' })
+vim.keymap.set('n', 'j', 'gj', { desc = 'Move down display line' })
+vim.keymap.set('n', 'k', 'gk', { desc = 'Move up display line' })
 
 
 

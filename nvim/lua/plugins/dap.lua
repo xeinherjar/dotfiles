@@ -47,6 +47,9 @@ return {
       local home = os.getenv("HOME")
       local work_config_path = home .. "/projects/work.dap.lua"
       local work_loader, err = loadfile(work_config_path)
+      if err then
+        vim.notify('DAP work config error: ' .. err, vim.log.levels.WARN)
+      end
       if work_loader then
         local work_configs = work_loader()
         if work_configs and work_configs.scala then

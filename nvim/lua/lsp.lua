@@ -21,13 +21,14 @@ vim.lsp.config('rust_analyzer', {
 vim.lsp.enable({
   'lua-ls',
   'zls',
-  'gopls',
   -- From nvim-lspconfig, TODO: lua/plugins/lsp.lua
-  'hsl',
+  'clangd',
   'elixirls',
+  'gopls',
+  'hsl',
   'rust_analyzer',
-  'ty', -- Python
   'ts_ls',
+  'ty', -- Python
 })
 
 -- Most ideas taken from https://lsp-zero.netlify.app/blog/lsp-client-features.html
