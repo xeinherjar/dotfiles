@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, { buffer = ev.buf, desc = '[W]orkspace [l]ist' })
 
 
-vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = ev.buf, desc = 'Rename' })
+    vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = ev.buf, desc = 'Rename' })
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = ev.buf, desc = '[C]ode [A]ction' })
     vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format { async = true }
