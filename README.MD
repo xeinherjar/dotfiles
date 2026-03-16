@@ -112,6 +112,13 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 - lua/plugins -- modules for init.lua to load
 
 ## Languages
+### C++
+```sh
+brew install llvm
+brew install ninja
+brew install cmake
+```
+
 ### Common Lisp
 ```sh
 brew install sbcl
@@ -161,6 +168,7 @@ rm -f ./cs
 ```
 brew install go
 go install golang.org/x/tools/gopls@latest
+brew install tree-sitter-cli # no idea why nvim-treesitter needs this
 ```
 
 

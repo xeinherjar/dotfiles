@@ -1,7 +1,7 @@
 vim.diagnostic.config({
   signs = {
     numhl = {
-      [vim.diagnostic.severity.INFO] = "HintMsg",
+      [vim.diagnostic.severity.HINT] = "HintMsg",
       [vim.diagnostic.severity.INFO] = "InfoMsg",
       [vim.diagnostic.severity.WARN] = "WarningMsg",
       [vim.diagnostic.severity.ERROR] = "ErrorMsg",

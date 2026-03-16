@@ -48,7 +48,8 @@ vim.opt.winborder = "rounded"
 
 
 --vim.cmd([[colorscheme duskfox]])
-vim.cmd([[colorscheme catppuccin-mocha]])
+vim.opt.laststatus = 3
+vim.cmd.colorscheme('catppuccin-mocha')
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'elixir' },

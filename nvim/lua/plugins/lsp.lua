@@ -41,10 +41,10 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
-    -- TODO: keep stuff in lua/lsp.lua and copy configs to lsp/
-    -- or move vim.lsp.enable to here for configs pulled from nvim-lspconfig?
-    -- as of 11.2 and https://github.com/neovim/nvim-lspconfig/issues/3494 
-    -- blink.cmp capabilities should be auto found
+      -- TODO: keep stuff in lua/lsp.lua and copy configs to lsp/
+      -- or move vim.lsp.enable to here for configs pulled from nvim-lspconfig?
+      -- as of 11.2 and https://github.com/neovim/nvim-lspconfig/issues/3494
+      -- blink.cmp capabilities should be auto found
     end
   }
 }
