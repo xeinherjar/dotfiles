@@ -73,10 +73,8 @@ if [ -d "$HOME/go" ] ; then
     export PATH="$PATH:$GOBIN"
 fi
 
-# Enable FNM (fast node manager)
-if [ -x "$(command -v fnm)" ]; then
-    eval "$(fnm env)"
-fi
+# Mise - manages node, python, java, go, zig, etc.
+eval "$(mise activate zsh)"
 
 # Work Laptop?
 [ -e ~/projects/work.rc ] && source ~/projects/work.rc

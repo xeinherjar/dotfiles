@@ -56,6 +56,22 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519_sk
 ```
 
+## Mise
+Manages Node, Python, Java, Go, Zig, and more from a single config.
+```sh
+brew install mise
+# or
+curl https://mise.run | sh
+```
+
+Symlink the global config:
+```sh
+mkdir -p ~/.config/mise
+ln -s ~/dotfiles/mise/config.toml ~/.config/mise/config.toml
+mise trust ~/dotfiles/mise/config.toml
+mise install
+```
+
 ## Zsh
 Don't take .zprofile, too machine specific most of the time
 ```sh
@@ -98,6 +114,7 @@ Nerd Font `M-x nerd-icons-install-fonts`
 ### MacOS
 ```sh
 brew install neovim
+brew install tree-sitter-cli # needed fr tree-sitter in nvim 
 ```
 
 ### Linux
@@ -134,41 +151,28 @@ sudo ./posix-install.sh
 
 ### Elixir
 ```
-brew install elixir
+mise use -g erlang@latest
+mise use -g elixir@latest
 curl -o els.zip -fL $(curl https://api.github.com/repos/elixir-lsp/elixir-ls/releases/latest | jq -r '.assets[0].browser_download_url')
 unzip els.zip -d software/elixir-ls
 rm els.zip
 ```
 
-### Scala
-Install Coursier, have it manage the JVM
-
-
-#### MacOS
-- at time of writing the one from brew doesn't work with M series chips
+### Scala / JVM
+Mise manages Java directly; coursier is used as a Scala tooling bootstrapper.
 ```sh
-$ curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > cs
-./cs setup
+mise use -g java@temurin-21
+mise use -g coursier@latest
 ```
 
-#### Linux
-```sh
-curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
-chmod +x cs
-./cs setup --yes
-rm -f ./cs
-```
+Mise sets `JAVA_HOME` automatically. Remove any coursier-injected `JAVA_HOME` and PATH blocks from `~/.zprofile`:
 
-### JVM
-`cs java --jvm 21 --setup`
-- Sets `JAVA_HOME` to use 21 and install it, env is set in .zprofile
-- If you need one off for a project `eval "$(cs java --jvm 14 --env)"` to set for that shell
+If you need a one-off JVM version for a project: `eval "$(mise exec java@temurin-17 -- env)"`
 
 ### Golang
-```
-brew install go
+```sh
+mise use -g go@latest
 go install golang.org/x/tools/gopls@latest
-brew install tree-sitter-cli # no idea why nvim-treesitter needs this
 ```
 
 
@@ -179,18 +183,16 @@ brew install lua-language-server
 
 ### Node / JavaScript
 ```sh
-brew install fnm
-fnm install v21.6.1 # or whatever version
+mise use -g node@lts
 ```
 
 ### Python
-```
-curl -LsSf https://astral.sh/uv/install.sh | sh
-# or
-brew install uv
+```sh
+mise use -g uv@latest
+mise use -g python@3.12
 ```
 
-LSP
+LSP (uv tools are still managed by uv itself)
 ```sh
 # Install
 uv tool install ty@latest
@@ -215,16 +217,8 @@ sudo apt-get install libgmp3-dev
 
 ### Zig
 ```sh
-curl https://ziglang.org/download/index.json | jq '.master["aarch64-macos"].tarball'
-curl -Lv OUTPUT -o zig.tar.xz
-tar -xf zig.tar.xz
-mv zig.. ~/software
-ln -s ~/software/zig/zig ~/.local/bin/zig
-```
-Follow https://zigtools.org/zls/install/
-currently installing to ~/software/zls
-```
-ln -s ~/software/zls/zig-out/bin/zls ~/.local/bin/zls
+mise use -g zig@latest
+mise use -g zls@latest
 ```
 
 

@@ -1,0 +1,9 @@
+[tools]
+node = "lts"
+python = "3.12"
+uv = "latest"
+java = "temurin-21"
+coursier = "latest"
+go = "latest"
+zig = "latest"
+zls = "latest"
