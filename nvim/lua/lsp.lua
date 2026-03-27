@@ -29,6 +29,7 @@ vim.lsp.enable({
   'rust_analyzer',
   'ts_ls',
   'ty', -- Python
+  'ruff',
 })
 
 -- Most ideas taken from https://lsp-zero.netlify.app/blog/lsp-client-features.html

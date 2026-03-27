@@ -163,11 +163,20 @@ Mise manages Java directly; coursier is used as a Scala tooling bootstrapper.
 ```sh
 mise use -g java@temurin-21
 mise use -g coursier@latest
+cs setup
+cs install metals
 ```
 
 Mise sets `JAVA_HOME` automatically. Remove any coursier-injected `JAVA_HOME` and PATH blocks from `~/.zprofile`:
 
 If you need a one-off JVM version for a project: `eval "$(mise exec java@temurin-17 -- env)"`
+
+```
+mise To enable macOS integration, run the following commands:
+sudo mkdir /Library/Java/JavaVirtualMachines/temurin-21.0.10+7.0.LTS.jdk
+sudo ln -s /Users/Alex.Pate/.local/share/mise/installs/java/temurin-21.0.10+7.0.LTS/Contents /Library/Java/JavaVirtualMachines/temurin-21.0.10+7.0.LTS.jdk/Contents
+```
+
 
 ### Golang
 ```sh
