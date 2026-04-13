@@ -34,6 +34,11 @@ fc-cache -f -v
 
 ## Tools
 ```sh
+brew install --cask nikitabobko/tap/aerospace
+ln -s ~/dotfiles/.aerospace.toml ~/.aerospace.toml
+```
+
+```sh
 git config --global init.defaultBranch master
 git config --global core.excludesfile ~/dotfiles/.gitignore_global
 git config --global user.email "you@example.com"
