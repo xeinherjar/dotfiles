@@ -78,28 +78,12 @@ automatically-unhide-macos-hidden-apps = false
     run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-    if.app-id = 'com.microsoft.Outlook'
-    run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
-    if.app-id = 'com.jetbrains.datagrip'
-    run = 'move-node-to-workspace D'
-
-[[on-window-detected]]
     if.app-id = 'com.electron.logseq'
     run = 'move-node-to-workspace N'
 
 [[on-window-detected]]
-    if.app-id = 'com.postmanlabs.mac'
-    run = 'move-node-to-workspace P'
-
-[[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
     run = 'move-node-to-workspace S'
-
-[[on-window-detected]]
-    if.app-id = 'com.cisco.secureclient.gui'
-    run = 'layout floating'
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
