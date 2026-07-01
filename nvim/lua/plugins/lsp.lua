@@ -7,7 +7,7 @@ return {
       local metals_config = require('metals').bare_config()
 
       metals_config.settings = {
-        -- excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
+        serverVersion = "2.0.0-M14",
         serverProperties = {
           '-XX:+UseG1GC',
           '-XX:+UseStringDeduplication',
