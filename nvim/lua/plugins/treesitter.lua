@@ -11,6 +11,18 @@ return {
           'xml', 'html', 'yaml', 'latex', 'zig', 'proto', 'go', 'cpp'
         }
       )
+
+      -- The treesitter `main` branch does not auto-enable highlighting; start it
+      -- per-buffer for any filetype whose parser is installed.
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('treesitter_start', { clear = true }),
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match)
+          if lang and vim.treesitter.language.add(lang) then
+            vim.treesitter.start(args.buf, lang)
+          end
+        end,
+      })
     end
   },
   {

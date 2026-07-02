@@ -25,7 +25,7 @@ vim.lsp.enable({
   'clangd',
   'elixirls',
   'gopls',
-  'hsl',
+  'hls',
   'rust_analyzer',
   'ts_ls',
   'ty', -- Python

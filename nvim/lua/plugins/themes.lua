@@ -1,7 +1,7 @@
 return {
   {
     'folke/tokyonight.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
     opts = {}
   },
@@ -9,12 +9,12 @@ return {
     'ellisonleao/gruvbox.nvim',
     priority = 1000,
     config = true,
-    lazy = false,
+    lazy = true,
     opts = {}
   },
   {
     'sainnhe/gruvbox-material',
-    lazy = false,
+    lazy = true,
     priority = 1000,
     opts = {},
     config = function()
@@ -24,7 +24,7 @@ return {
   },
   {
     'EdenEast/nightfox.nvim', -- for duskfox
-    lazy = false,
+    lazy = true,
     priority = 1000,
     opts = {}
   },
@@ -35,7 +35,7 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = false,
+    lazy = true,
     branch = "master",
     config = function()
       require('kanagawa').setup({
