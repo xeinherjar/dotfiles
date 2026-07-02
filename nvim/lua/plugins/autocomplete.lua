@@ -26,9 +26,10 @@ return {
       nerd_font_variant = 'mono'
     },
 
-    -- (Default) Only show the documentation popup when manually triggered
     completion = {
-      documentation = { auto_show = true },
+      documentation = { auto_show = true, auto_show_delay_ms = 200 },
+      -- Inline preview of the selected item in the buffer as you navigate
+      ghost_text = { enabled = true },
       menu = {
         draw = {
           -- We don't need label_description now because label and label_description are already

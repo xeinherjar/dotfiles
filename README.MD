@@ -14,7 +14,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ```sh
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
-sudo apt-get install build-essential git curl alacritty ripgrep
+sudo apt-get install build-essential git curl alacritty ripgrep fzf
 sudo apt-get install neovim tmux
 ```
 
@@ -119,7 +119,8 @@ Nerd Font `M-x nerd-icons-install-fonts`
 ### MacOS
 ```sh
 brew install neovim
-brew install tree-sitter-cli # needed fr tree-sitter in nvim 
+brew install tree-sitter-cli # needed fr tree-sitter in nvim
+brew install fzf ripgrep      # fuzzy finder (fzf-lua) + grep backend
 ```
 
 ### Linux

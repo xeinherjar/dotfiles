@@ -1,4 +1,4 @@
-local picker = require('snacks').picker
+local fzf = require('fzf-lua')
 local gitsigns = require('gitsigns')
 local metals = require('metals')
 
@@ -7,10 +7,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     -- Buffer local mappings.
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = ev.buf, desc = '' })
-    vim.keymap.set('n', 'gd', function() picker.lsp_definitions() end, { buffer = ev.buf, desc = '[G]o to [D]efinition' })
+    vim.keymap.set('n', 'gd', fzf.lsp_definitions, { buffer = ev.buf, desc = '[G]o to [D]efinition' })
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = 'LSP Hover' })
-    vim.keymap.set('n', 'gi', function() picker.lsp_implementations() end, { desc = '[G]o to [I]mplementation' })
-    vim.keymap.set('n', 'gr', function() picker.lsp_references() end, { desc = '[G]o to [R]eferences' })
+    vim.keymap.set('n', 'gi', fzf.lsp_implementations, { desc = '[G]o to [I]mplementation' })
+    vim.keymap.set('n', 'gr', fzf.lsp_references, { desc = '[G]o to [R]eferences' })
     vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = '[G]o to [T]ype Definition' })
 
     -- Workspaces
@@ -31,9 +31,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Diagnostics
     vim.keymap.set('n', '<leader>sld', function() vim.diagnostic.open_float(0, { scope = 'line' }) end,
       { desc = '[S]how [L]ine [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sbd', function() picker.diagnostics_buffer() end,
+    vim.keymap.set('n', '<leader>sbd', fzf.diagnostics_document,
       { desc = '[S]how [B]uffer [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sad', function() picker.diagnostics() end, { desc = '[S]how [A]ll [D]iagnostics' })
+    vim.keymap.set('n', '<leader>sad', fzf.diagnostics_workspace, { desc = '[S]how [A]ll [D]iagnostics' })
     vim.keymap.set('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end,
       { desc = '[T]oggle ghost text [D]iagnostics' })
   end,
