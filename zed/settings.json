@@ -7,6 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "vim_mode": true,
   "telemetry": {
     "metrics": false
@@ -56,7 +70,9 @@
     "git_status": true
   },
   "soft_wrap": "none",
-  "project_panel": {},
+  "project_panel": {
+    "dock": "left"
+  },
   "tab_bar": { "show": true },
   "indent_guides": {
     "enabled": true,

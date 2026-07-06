@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, { buffer = ev.buf, desc = '[F]ormat file' })
 
     -- Diagnostics
-    vim.keymap.set('n', '<leader>sld', function() vim.diagnostic.open_float(0, { scope = 'line' }) end,
+    vim.keymap.set('n', '<leader>sld', function() vim.diagnostic.open_float({ bufnr = 0, scope = 'line' }) end,
       { desc = '[S]how [L]ine [D]iagnostics' })
     vim.keymap.set('n', '<leader>sbd', fzf.diagnostics_document,
       { desc = '[S]how [B]uffer [D]iagnostics' })

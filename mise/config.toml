@@ -11,4 +11,8 @@ zig = "0.15.2"
 zls = "0.15.1"
 
 "npm:typescript-language-server" = "latest"
+"npm:typescript" = "latest"
 "npm:prettier" = "latest"
+
+[env]
+_.path = ['{{config_root}}/node_modules/.bin']
