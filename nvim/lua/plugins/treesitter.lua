@@ -8,7 +8,8 @@ return {
       ts.install(
         { 'vimdoc', 'javascript', 'typescript', 'scala', 'lua', 'rust', 'python',
           'haskell', 'bash', 'elixir', 'heex', 'eex', 'markdown', 'markdown_inline',
-          'xml', 'html', 'yaml', 'latex', 'zig', 'proto', 'go', 'cpp'
+          'xml', 'html', 'yaml', 'latex', 'zig', 'proto', 'go', 'cpp', 'c_sharp',
+          'gdscript',
         }
       )
 

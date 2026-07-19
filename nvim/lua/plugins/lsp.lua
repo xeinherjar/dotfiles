@@ -39,6 +39,15 @@ return {
     end
   },
   {
+    "seblyng/roslyn.nvim",
+    ---@module 'roslyn.config'
+    ---@type RoslynNvimConfig
+    opts = {
+      broad_search = true,
+    },
+    ft = { "cs", "csproj" }
+  },
+  {
     'neovim/nvim-lspconfig',
     config = function()
       -- TODO: keep stuff in lua/lsp.lua and copy configs to lsp/

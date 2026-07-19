@@ -24,6 +24,22 @@ return {
       dap.listeners.before.event_exited.dapui_config = function()
         dapui.close()
       end
+      dap.adapters.coreclr = {
+        type = 'executable',
+        command = 'netcoredbg',
+        args = { '--interpreter=vscode' }
+      }
+
+      -- Attach to running Godot process after launching with `mise run run`
+      dap.configurations.cs = {
+        {
+          type = 'coreclr',
+          name = 'Attach to Godot',
+          request = 'attach',
+          processId = require('dap.utils').pick_process,
+        },
+      }
+
       dap.configurations.scala = {
         {
           type = 'scala',

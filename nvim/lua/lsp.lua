@@ -10,6 +10,17 @@ vim.lsp.config('rust_analyzer', {
   }
 })
 
+vim.lsp.config("roslyn", {
+  cmd = {
+    "dotnet",
+    "tool",
+    "run",
+    "roslyn-language-server",
+    "--stdio"
+  },
+}
+)
+
 -- Currently causes zls to panic
 -- vim.lsp.config('zls', {
 --   settings = {
@@ -24,6 +35,7 @@ vim.lsp.enable({
   -- From nvim-lspconfig, TODO: lua/plugins/lsp.lua
   'clangd',
   'elixirls',
+  'gdscript',
   'gopls',
   'hls',
   'rust_analyzer',
