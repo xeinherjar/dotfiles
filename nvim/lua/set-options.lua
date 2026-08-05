@@ -49,4 +49,4 @@ vim.opt.winborder = "rounded"
 
 --vim.cmd([[colorscheme duskfox]])
 vim.opt.laststatus = 3
-vim.cmd.colorscheme('catppuccin-mocha')
+vim.cmd.colorscheme('cendre')

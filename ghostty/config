@@ -1,7 +1,6 @@
 # aesthetics
-# theme = duskfox
-#theme = kanagawa-wave
-theme = Catppuccin Mocha
+#theme = Catppuccin Mocha
+theme = "cendre"
 font-family = "Monaspace Neon"
 #background-opacity = 0.90
 #background-blur-radius = 20

@@ -20,7 +20,7 @@ setopt EXTENDED_HISTORY
 HISTTIMEFORMAT="%F %T "
 
 # Autoloads
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -u
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey '^O' edit-command-line # Ctrl-o to open command in i$EDITOR to edit :)
