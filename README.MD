@@ -246,6 +246,11 @@ zig build -p $HOME/.local -Doptimize=ReleaseFast
 ln -s ~/dotfiles/ghostty ~/.config/ghostty
 ```
 
+## Rex
+```
+ln -s ~/dotfiles/rex/init.lua ~/.config/rex/init.lua
+```
+
 ### Firefox Nightly
 ```sh
 curl -Lv "https://download.mozilla.org/?product=firefox-nightly-latest-ssl&os=linux64&lang=en-US" -o firefox-nightly.tar.bz2 

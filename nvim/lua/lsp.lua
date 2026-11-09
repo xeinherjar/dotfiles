@@ -33,11 +33,8 @@ vim.lsp.enable({
   'lua-ls',
   'zls',
   -- From nvim-lspconfig, TODO: lua/plugins/lsp.lua
-  'clangd',
   'elixirls',
   'gdscript',
-  'gopls',
-  'hls',
   'rust_analyzer',
   'ts_ls',
   'ty', -- Python
